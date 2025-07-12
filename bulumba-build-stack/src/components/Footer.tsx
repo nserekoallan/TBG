@@ -1,6 +1,6 @@
 import './Footer.css';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -68,14 +68,11 @@ const Footer = () => {
         {/* Social Media & Copyright */}
         <div className="footer-bottom">
           <div className="footer-social">
-            <a href="#" className="footer-social-link">
-              <Facebook className="footer-social-icon" />
-            </a>
-            <a href="#" className="footer-social-link">
+            <a href="https://x.com/TBulumba" className="footer-social-link">
               <Twitter className="footer-social-icon" />
             </a>
-            <a href="#" className="footer-social-link">
-              <Instagram className="footer-social-icon" />
+            <a href="https://www.linkedin.com/in/bulumba-timothy-120bb126b/" className="footer-social-link">
+              <Linkedin className="footer-social-icon" />
             </a>
           </div>
           <p className="footer-copyright">

@@ -294,8 +294,8 @@ const JoinUsPage = () => {
                 <div className="joinus-contact-extra">
                   <p className="joinus-contact-extra-text">
                     You can also reach us directly at{' '}
-                    <a href="mailto:info@bulumba.ug" className="joinus-contact-extra-link">
-                      info@bulumba.ug
+                    <a href="mailto:timothybulumba4@gmail.com" className="joinus-contact-extra-link">
+                      timothybulumba4@gmail.com
                     </a>
                     {' '}or follow us on social media for updates.
                   </p>
