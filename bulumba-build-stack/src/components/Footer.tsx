@@ -1,7 +1,8 @@
 import "./Footer.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Linkedin, X } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, X, Facebook } from "lucide-react";
+import B3 from "../assets/images/B3.jpg";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           <div className="footer-brand">
             <div className="footer-brand-row">
               <div className="footer-logo-bg">
-                <span className="footer-logo-text">B³</span>
+                <img src={B3} alt="Bulumba Logo" className="footer-logo-img" />
               </div>
               <div>
                 <span className="footer-logo-title">Bulumba</span>
@@ -120,6 +121,14 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <FaWhatsapp className="footer-social-icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100082311822729"
+              className="footer-social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Facebook className="footer-social-icon" />
             </a>
           </div>
           <p className="footer-copyright">

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../components/ui/button';
+import B3 from "../assets/images/B3.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="header-logo-link">
             <div className="header-logo-bg">
-              <span className="header-logo-text">B³</span>
+              <div className="footer-logo-bg">
+                <img src={B3} alt="Bulumba Logo" className="footer-logo-img" />
+              </div>
             </div>
             <div className="header-logo-title-wrap">
               <span className="header-logo-title">Bulumba</span>

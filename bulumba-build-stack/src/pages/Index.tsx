@@ -31,7 +31,7 @@ const Index = () => {
         <div 
           className="index-hero-bg"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://mkeqcoiwszenuwxntjrh.supabase.co/storage/v1/object/public/tourismimages//B1.jpg')`
           }}
         />
         

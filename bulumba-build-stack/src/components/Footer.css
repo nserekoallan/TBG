@@ -38,8 +38,8 @@
   background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
   color: #fff;
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,4 +169,12 @@
   color: #64748b;
   font-size: 0.98rem;
   text-align: center;
+}
+
+.footer-logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
