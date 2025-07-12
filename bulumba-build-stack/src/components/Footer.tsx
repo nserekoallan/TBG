@@ -1,84 +1,84 @@
-
+import './Footer.css';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="footer-root">
+      <div className="footer-container">
+        <div className="footer-grid">
           {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B³</span>
+          <div className="footer-brand">
+            <div className="footer-brand-row">
+              <div className="footer-logo-bg">
+                <span className="footer-logo-text">B³</span>
               </div>
               <div>
-                <span className="text-xl font-bold">Bulumba</span>
-                <span className="text-sm text-gray-400 block -mt-1">Build Back Better</span>
+                <span className="footer-logo-title">Bulumba</span>
+                <span className="footer-logo-subtitle">Build Back Better</span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">
+            <p className="footer-brand-description">
               Transforming Makerere University through innovative campaigns and community engagement.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/campaigns" className="text-gray-400 hover:text-white transition-colors">Campaigns</Link></li>
-              <li><Link to="/vision" className="text-gray-400 hover:text-white transition-colors">Vision</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About</Link></li>
+          <div className="footer-links">
+            <h3 className="footer-links-title">Quick Links</h3>
+            <ul className="footer-links-list">
+              <li><Link to="/" className="footer-link">Home</Link></li>
+              <li><Link to="/campaigns" className="footer-link">Campaigns</Link></li>
+              <li><Link to="/vision" className="footer-link">Vision</Link></li>
+              <li><Link to="/about" className="footer-link">About</Link></li>
             </ul>
           </div>
 
           {/* Get Involved */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Get Involved</h3>
-            <ul className="space-y-2">
-              <li><Link to="/join" className="text-gray-400 hover:text-white transition-colors">Join Us</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Volunteer</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Donate</a></li>
+          <div className="footer-involved">
+            <h3 className="footer-involved-title">Get Involved</h3>
+            <ul className="footer-involved-list">
+              <li><Link to="/join" className="footer-link">Join Us</Link></li>
+              <li><Link to="/contact" className="footer-link">Contact</Link></li>
+              <li><a href="#" className="footer-link">Volunteer</a></li>
+              <li><a href="#" className="footer-link">Donate</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2 text-gray-400">
-                <MapPin className="h-4 w-4" />
-                <span className="text-sm">Makerere University, Kampala</span>
+          <div className="footer-contact">
+            <h3 className="footer-contact-title">Contact</h3>
+            <div className="footer-contact-list">
+              <div className="footer-contact-row">
+                <MapPin className="footer-contact-icon" />
+                <span className="footer-contact-text">Makerere University, Kampala</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Mail className="h-4 w-4" />
-                <span className="text-sm">info@bulumba.ug</span>
+              <div className="footer-contact-row">
+                <Mail className="footer-contact-icon" />
+                <span className="footer-contact-text">info@bulumba.ug</span>
               </div>
-              <div className="flex items-center space-x-2 text-gray-400">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">+256 XXX XXX XXX</span>
+              <div className="footer-contact-row">
+                <Phone className="footer-contact-icon" />
+                <span className="footer-contact-text">+256 XXX XXX XXX</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Social Media & Copyright */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Facebook className="h-5 w-5" />
+        <div className="footer-bottom">
+          <div className="footer-social">
+            <a href="#" className="footer-social-link">
+              <Facebook className="footer-social-icon" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Twitter className="h-5 w-5" />
+            <a href="#" className="footer-social-link">
+              <Twitter className="footer-social-icon" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <Instagram className="h-5 w-5" />
+            <a href="#" className="footer-social-link">
+              <Instagram className="footer-social-icon" />
             </a>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="footer-copyright">
             © 2024 Bulumba Build Back Better. All rights reserved.
           </p>
         </div>

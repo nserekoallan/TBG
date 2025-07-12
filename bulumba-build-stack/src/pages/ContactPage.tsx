@@ -162,7 +162,7 @@ const ContactPage = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="contact-form-label">
+                        <Label htmlFor="email" className="contact-form-label1">
                           Email Address *
                         </Label>
                         <Input
@@ -172,7 +172,7 @@ const ContactPage = () => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="contact-form-input"
+                          className="contact-form-input1"
                           placeholder="your.email@example.com"
                         />
                       </div>

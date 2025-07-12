@@ -1,0 +1,172 @@
+.footer-root {
+  background: #f8fafc;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Brand Section */
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo-bg {
+  background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-text {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.footer-logo-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2563eb;
+  display: block;
+}
+
+.footer-logo-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: block;
+}
+
+.footer-brand-description {
+  color: #334155;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Quick Links */
+.footer-links-title,
+.footer-involved-title,
+.footer-contact-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2563eb;
+}
+
+.footer-links-list,
+.footer-involved-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.4rem;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer-link:hover {
+  background: #e0e7ff;
+  color: #2563eb;
+}
+
+/* Contact Info */
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contact-icon {
+  color: #2563eb;
+  font-size: 1.2rem;
+}
+
+.footer-contact-text {
+  color: #334155;
+  font-size: 1rem;
+}
+
+/* Social Media & Copyright */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #2563eb;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.footer-social-link:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.footer-social-icon {
+  font-size: 1.5rem;
+}
+
+.footer-copyright {
+  color: #64748b;
+  font-size: 0.98rem;
+  text-align: center;
+}

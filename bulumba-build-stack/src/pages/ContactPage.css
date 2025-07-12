@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: #fff;
   color: #222;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* Hero Section */
@@ -168,6 +168,14 @@
   display: block;
 }
 
+.contact-form-label1 {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+  margin-left: 20px;
+}
+
+
 .contact-form-input,
 .contact-form-textarea {
   width: 100%;
@@ -181,16 +189,44 @@
   transition: border-color 0.2s;
 }
 
+.contact-form-input1 {
+  width: 98%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  color: #222;
+  transition: border-color 0.2s;
+  margin-left: 20px;
+}
+
+.contact-form-input1:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
 .contact-form-input:focus,
 .contact-form-textarea:focus {
   border-color: #2563eb;
   outline: none;
 }
 
+/* Optional: visually group phone and school fields for clarity */
+.contact-form-phone,
+.contact-form-school {
+  /* You can add custom styles if you want to highlight these fields */
+  /* Example: */
+  /* border-left: 3px solid #2563eb; */
+  /* padding-left: 0.5rem; */
+}
+
 .contact-form-submit-btn {
   background: #2563eb;
   color: #fff;
   border-radius: 0.5rem;
+  justify-content: center;
   font-weight: 500;
   padding: 0.75rem 1.5rem;
   border: none;

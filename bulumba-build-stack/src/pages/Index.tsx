@@ -5,7 +5,6 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useEffect, useRef } from 'react';
 
 const Index = () => {
   const slogans = [
@@ -21,32 +20,6 @@ const Index = () => {
     { icon: Lightbulb, label: "Innovation Projects", value: "15+" }
   ];
 
-  const useScrollAnimation = () => {
-    const elementsRef = useRef([]);
-    
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('animate-fade-in-up');
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      elementsRef.current.forEach((el: Element) => {
-  observer.observe(el);
-});
-
-      return () => observer.disconnect();
-    }, []);
-
-    return elementsRef;
-  };
-
-  
 
   return (
     <div className="index-root">
