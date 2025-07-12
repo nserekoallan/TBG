@@ -1,11 +1,11 @@
-
+import './AboutPage.css';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Target, Users, Award, History, ArrowRight, Quote } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer'; 
 
 const AboutPage = () => {
   const teamMembers = [
@@ -92,29 +92,29 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="about-root">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-600">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      <section className="about-hero">
+        <div className="about-container">
+          <div className="about-hero-content">
+            <h1 className="about-hero-title">
               About Our 
-              <span className="bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent block">
+              <span className="about-hero-highlight">
                 Movement
               </span>
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="about-hero-description">
               The Build Back Better campaign represents a comprehensive vision for transforming 
               Makerere University into a world-class institution that serves as a beacon of 
               academic excellence, innovation, and community impact across East Africa.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600">
+            <div className="about-hero-buttons">
+              <Button asChild size="lg" className="about-vision-btn">
                 <Link to="/vision">Our Vision</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              <Button asChild size="lg" variant="outline" className="about-campaigns-btn">
                 <Link to="/campaigns">View Campaigns</Link>
               </Button>
             </div>
@@ -123,20 +123,20 @@ const AboutPage = () => {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <Card className="max-w-4xl mx-auto shadow-lg border-l-4 border-l-blue-600">
-            <CardContent className="p-8 md:p-12">
-              <div className="flex items-start space-x-4">
-                <Quote className="h-8 w-8 text-blue-600 mt-1 flex-shrink-0" />
+      <section className="about-mission">
+        <div className="about-container">
+          <Card className="about-mission-card">
+            <CardContent className="about-mission-content">
+              <div className="about-mission-quote-row">
+                <Quote className="about-mission-quote-icon" />
                 <div>
-                  <blockquote className="text-lg md:text-xl text-gray-700 mb-4 leading-relaxed">
+                  <blockquote className="about-mission-quote">
                     "Our mission is to transform Makerere University through innovative campaigns that enhance 
                     student experience, modernize infrastructure, and create lasting positive impact. We believe 
                     that by working together, we can build back better and establish Makerere as a leading 
                     institution for the 21st century."
                   </blockquote>
-                  <cite className="text-gray-600 font-medium">Build Back Better Campaign Team</cite>
+                  <cite className="about-mission-cite">Build Back Better Campaign Team</cite>
                 </div>
               </div>
             </CardContent>
@@ -145,26 +145,26 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <section className="about-values">
+        <div className="about-container">
+          <div className="about-section-header">
+            <h2 className="about-section-title">Our Core Values</h2>
+            <p className="about-section-description">
               The principles that guide our work and define our approach to transforming Makerere University
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="about-values-grid">
             {values.map((value, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="about-value-card">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-8 w-8 text-blue-600" />
+                  <div className="about-value-icon-bg">
+                    <value.icon className="about-value-icon" />
                   </div>
-                  <CardTitle className="text-xl font-bold">{value.title}</CardTitle>
+                  <CardTitle className="about-value-title">{value.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{value.description}</p>
+                  <p className="about-value-description">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -173,31 +173,31 @@ const AboutPage = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <section className="about-team">
+        <div className="about-container">
+          <div className="about-section-header">
+            <h2 className="about-section-title">Meet Our Team</h2>
+            <p className="about-section-description">
               Dedicated leaders working tirelessly to make the Build Back Better vision a reality
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="about-team-grid">
             {teamMembers.map((member, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="about-team-card">
                 <CardHeader>
-                  <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full">
+                  <div className="about-team-image-bg">
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="about-team-image"
                     />
                   </div>
-                  <CardTitle className="text-lg font-bold">{member.name}</CardTitle>
-                  <p className="text-blue-600 font-medium">{member.role}</p>
+                  <CardTitle className="about-team-name">{member.name}</CardTitle>
+                  <p className="about-team-role">{member.role}</p>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 text-sm">{member.description}</p>
+                  <p className="about-team-description">{member.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -206,45 +206,43 @@ const AboutPage = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <section className="about-timeline">
+        <div className="about-container">
+          <div className="about-section-header">
+            <h2 className="about-section-title">Our Journey</h2>
+            <p className="about-section-description">
               Key milestones in our Build Back Better campaign
             </p>
           </div>
           
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-8">
+          <div className="about-timeline-list">
+            <div className="about-timeline-items">
               {milestones.map((milestone, index) => (
-                <div key={index} className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className={`w-4 h-4 rounded-full border-4 ${
-                      milestone.status === 'completed' ? 'bg-green-500 border-green-500' :
-                      milestone.status === 'in-progress' ? 'bg-blue-500 border-blue-500' :
-                      'bg-gray-300 border-gray-300'
-                    }`}></div>
-                  </div>
-                  <div className="flex-grow">
-                    <Card className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-lg font-semibold text-gray-900">{milestone.title}</h3>
-                          <div className="flex items-center space-x-2">
-                            <Badge variant="outline" className="text-xs">
+                <div key={index} className="about-timeline-row">
+                  <div className={`about-timeline-dot ${
+                    milestone.status === 'completed' ? 'about-timeline-dot-completed' :
+                    milestone.status === 'in-progress' ? 'about-timeline-dot-inprogress' :
+                    'about-timeline-dot-planned'
+                  }`}></div>
+                  <div className="about-timeline-card-wrap">
+                    <Card className="about-timeline-card">
+                      <CardContent className="about-timeline-card-content">
+                        <div className="about-timeline-card-header">
+                          <h3 className="about-timeline-title">{milestone.title}</h3>
+                          <div className="about-timeline-badges">
+                            <Badge variant="outline" className="about-timeline-year">
                               {milestone.year}
                             </Badge>
-                            <Badge className={
-                              milestone.status === 'completed' ? 'bg-green-500' :
-                              milestone.status === 'in-progress' ? 'bg-blue-500' :
-                              'bg-gray-500'
-                            }>
+                            <Badge className={`about-timeline-status ${
+                              milestone.status === 'completed' ? 'about-timeline-status-completed' :
+                              milestone.status === 'in-progress' ? 'about-timeline-status-inprogress' :
+                              'about-timeline-status-planned'
+                            }`}>
                               {milestone.status.replace('-', ' ')}
                             </Badge>
                           </div>
                         </div>
-                        <p className="text-gray-600">{milestone.description}</p>
+                        <p className="about-timeline-description">{milestone.description}</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -256,26 +254,26 @@ const AboutPage = () => {
       </section>
 
       {/* Impact Stats */}
-      <section className="py-16 bg-blue-600">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Our Impact So Far</h2>
-            <p className="text-blue-100 max-w-2xl mx-auto">
+      <section className="about-impact">
+        <div className="about-container">
+          <div className="about-impact-header">
+            <h2 className="about-impact-title">Our Impact So Far</h2>
+            <p className="about-impact-description">
               Measurable progress in our mission to transform Makerere University
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="about-impact-grid">
             {[
               { number: "500+", label: "Students Supported", description: "Through various programs" },
               { number: "50+", label: "Partners", description: "Organizations & businesses" },
               { number: "5", label: "Active Campaigns", description: "Comprehensive initiatives" },
               { number: "100%", label: "Transparency", description: "Open reporting & accountability" }
             ].map((stat, index) => (
-              <div key={index} className="text-center text-white">
-                <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">{stat.number}</div>
-                <div className="text-lg font-semibold mb-1">{stat.label}</div>
-                <div className="text-sm text-blue-100">{stat.description}</div>
+              <div key={index} className="about-impact-stat">
+                <div className="about-impact-number">{stat.number}</div>
+                <div className="about-impact-label">{stat.label}</div>
+                <div className="about-impact-stat-description">{stat.description}</div>
               </div>
             ))}
           </div>
@@ -283,23 +281,23 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <section className="about-cta">
+        <div className="about-container about-cta-content">
+          <h2 className="about-cta-title">
             Ready to Join Our Story?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="about-cta-description">
             Be part of the transformation. Your involvement, whether big or small, 
             contributes to building a better Makerere University for current and future students.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600">
+          <div className="about-cta-buttons">
+            <Button asChild size="lg" className="about-cta-join-btn">
               <Link to="/join">
                 Get Involved Today
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="about-cta-arrow" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="about-cta-contact-btn">
               <Link to="/contact">Contact Our Team</Link>
             </Button>
           </div>

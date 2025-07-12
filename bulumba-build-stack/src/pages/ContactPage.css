@@ -1,0 +1,371 @@
+.contact-root {
+  min-height: 100vh;
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Hero Section */
+.contact-hero {
+  padding: 4rem 0 2rem 0;
+  background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.contact-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.contact-hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Contact Info Cards */
+.contact-info-section {
+  padding: 2rem 0;
+  background: #f8fafc;
+}
+
+.contact-info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 700px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-info-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.contact-info-icon-bg {
+  background: #e0e7ff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.contact-info-icon {
+  color: #2563eb;
+  font-size: 2rem;
+}
+
+.contact-info-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-details {
+  margin-top: 0.5rem;
+}
+
+.contact-info-detail {
+  color: #334155;
+  font-size: 0.98rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Contact Form and Map */
+.contact-form-section {
+  padding: 3rem 0;
+  background: #fff;
+}
+
+.contact-form-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-form-header {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-description {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.contact-form-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+}
+
+.contact-form-card-content {
+  padding: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form-row {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .contact-form-row {
+    flex-direction: row;
+  }
+}
+
+.contact-form-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.contact-form-input,
+.contact-form-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  color: #222;
+  transition: border-color 0.2s;
+}
+
+.contact-form-input:focus,
+.contact-form-textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.contact-form-submit-btn {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-form-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-form-send-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Map and Social */
+.contact-map-header {
+  margin-bottom: 1rem;
+}
+
+.contact-map-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.contact-map-description {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.contact-map-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  margin-bottom: 1.5rem;
+}
+
+.contact-map-card-content {
+  padding: 1.5rem;
+}
+
+.contact-map-placeholder {
+  background: #e0e7ff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-map-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-map-icon {
+  color: #2563eb;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-map-location {
+  color: #334155;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Social Media */
+.contact-social-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-social-description {
+  color: #64748b;
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.contact-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0e7ff;
+  color: #2563eb;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.contact-social-icon:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.contact-social-svg {
+  font-size: 1.5rem;
+}
+
+/* FAQ Section */
+.contact-faq-section {
+  padding: 3rem 0;
+  background: #f8fafc;
+}
+
+.contact-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-faq-content {
+  margin-bottom: 2rem;
+}
+
+.contact-faq-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-faq-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-faq-description {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.contact-faq-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .contact-faq-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-faq-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+}
+
+.contact-faq-card-content {
+  padding: 1.5rem;
+}
+
+.contact-faq-question {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-faq-answer {
+  color: #334155;
+  font-size: 0.98rem;
+}

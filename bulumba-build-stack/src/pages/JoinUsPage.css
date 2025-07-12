@@ -1,0 +1,420 @@
+.joinus-root {
+  min-height: 100vh;
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Hero Section */
+.joinus-hero {
+  padding: 4rem 0 2rem 0;
+  background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.joinus-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.joinus-hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.joinus-hero-title-highlight {
+  background: linear-gradient(90deg, #fb923c, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.joinus-hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.joinus-hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.joinus-hero-badge {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #2563eb;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.joinus-hero-badge-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.joinus-hero-badge-divider {
+  color: #fb923c;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Ways to Contribute */
+.joinus-ways-section {
+  padding: 3rem 0;
+  background: #f8fafc;
+}
+
+.joinus-ways-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.joinus-ways-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.joinus-ways-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-ways-description {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.joinus-ways-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .joinus-ways-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.joinus-way-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.joinus-way-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.joinus-way-icon-bg {
+  background: #e0e7ff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.joinus-way-icon {
+  color: #2563eb;
+  font-size: 2rem;
+}
+
+.joinus-way-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-way-description {
+  color: #334155;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.joinus-way-actions {
+  margin-bottom: 1rem;
+}
+
+.joinus-way-actions-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-way-actions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.joinus-way-action {
+  display: flex;
+  align-items: center;
+  font-size: 0.98rem;
+  color: #334155;
+  margin-bottom: 0.25rem;
+}
+
+.joinus-way-action-dot {
+  width: 8px;
+  height: 8px;
+  background: #2563eb;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.joinus-way-btn {
+  margin-top: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.joinus-donate-btn {
+  background: #fb923c;
+  color: #222;
+}
+
+.joinus-volunteer-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.joinus-partner-btn {
+  background: #22c55e;
+  color: #fff;
+}
+
+.joinus-share-btn {
+  background: #facc15;
+  color: #222;
+}
+
+/* Contact Form */
+.joinus-contact-section {
+  padding: 3rem 0;
+  background: #fff;
+}
+
+.joinus-contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.joinus-contact-content {
+  margin-bottom: 2rem;
+}
+
+.joinus-contact-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.joinus-contact-icon {
+  color: #2563eb;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-contact-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.joinus-contact-description {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.joinus-contact-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+}
+
+.joinus-contact-card-content {
+  padding: 2rem;
+}
+
+.joinus-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.joinus-contact-form-group {
+  margin-bottom: 1rem;
+}
+
+.joinus-contact-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.joinus-contact-input,
+.joinus-contact-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #fff;
+  color: #222;
+  transition: border-color 0.2s;
+}
+
+.joinus-contact-input:focus,
+.joinus-contact-textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.joinus-contact-submit-btn {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.joinus-contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.joinus-contact-send-icon {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.joinus-contact-extra {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.joinus-contact-extra-text {
+  color: #334155;
+  font-size: 0.98rem;
+}
+
+.joinus-contact-extra-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* Success Stories */
+.joinus-success-section {
+  padding: 3rem 0;
+  background: #f8fafc;
+}
+
+.joinus-success-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.joinus-success-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.joinus-success-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-success-description {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.joinus-success-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .joinus-success-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.joinus-success-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.joinus-success-card-content {
+  padding: 0;
+}
+
+.joinus-success-number {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.joinus-success-number-blue {
+  color: #2563eb;
+}
+
+.joinus-success-number-green {
+  color: #22c55e;
+}
+
+.joinus-success-number-orange {
+  color: #fb923c;
+}
+
+.joinus-success-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.joinus-success-text {
+  color: #334155;
+  font-size: 0.98rem;
+}

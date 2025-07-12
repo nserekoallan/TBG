@@ -1,0 +1,148 @@
+.notfound-root {
+  min-height: 100vh;
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.notfound-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.notfound-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.notfound-illustration {
+  margin-bottom: 2rem;
+}
+
+.notfound-404 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #2563eb;
+  letter-spacing: 0.1em;
+}
+
+.notfound-divider {
+  width: 60px;
+  height: 4px;
+  background: #fb923c;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.notfound-description {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.notfound-pathinfo {
+  margin-bottom: 1.5rem;
+}
+
+.notfound-pathinfo-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.notfound-pathinfo-icon {
+  color: #2563eb;
+  font-size: 1.2rem;
+}
+
+.notfound-pathinfo-code {
+  background: #f1f5f9;
+  color: #2563eb;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.98rem;
+}
+
+.notfound-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .notfound-actions {
+    flex-direction: row;
+  }
+}
+
+.notfound-home-btn {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notfound-home-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.notfound-campaigns-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.notfound-helplinks {
+  margin-top: 2rem;
+}
+
+.notfound-helplinks-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #334155;
+}
+
+.notfound-helplinks-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.notfound-helplink {
+  color: #2563eb;
+  background: #e0e7ff;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.notfound-helplink:hover {
+  background: #2563eb;
+  color: #fff;
+}

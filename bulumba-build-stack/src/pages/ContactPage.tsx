@@ -1,4 +1,4 @@
-
+import './ContactPage.css';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -83,16 +83,16 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="contact-root">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="contact-hero">
+        <div className="contact-hero-container">
+          <h1 className="contact-hero-title">
             Contact Us
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="contact-hero-description">
             Have questions about our campaigns or want to get involved? 
             We're here to help and would love to hear from you.
           </p>
@@ -100,21 +100,21 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <section className="contact-info-section">
+        <div className="contact-info-container">
+          <div className="contact-info-grid">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+              <Card key={index} className="contact-info-card">
                 <CardHeader>
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="h-8 w-8 text-blue-600" />
+                  <div className="contact-info-icon-bg">
+                    <info.icon className="contact-info-icon" />
                   </div>
-                  <CardTitle className="text-lg font-semibold">{info.title}</CardTitle>
+                  <CardTitle className="contact-info-title">{info.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
+                  <div className="contact-info-details">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600 text-sm">
+                      <p key={idx} className="contact-info-detail">
                         {detail}
                       </p>
                     ))}
@@ -127,26 +127,26 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form and Map */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <section className="contact-form-section">
+        <div className="contact-form-container">
+          <div className="contact-form-grid">
             {/* Contact Form */}
             <div>
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
-                <p className="text-gray-600">
+              <div className="contact-form-header">
+                <h2 className="contact-form-title">Send Us a Message</h2>
+                <p className="contact-form-description">
                   Fill out the form below and we'll get back to you as soon as possible. 
                   Whether you have questions, want to volunteer, or are interested in partnerships, 
                   we're excited to connect with you.
                 </p>
               </div>
 
-              <Card className="shadow-lg">
-                <CardContent className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="contact-form-card">
+                <CardContent className="contact-form-card-content">
+                  <form onSubmit={handleSubmit} className="contact-form">
+                    <div className="contact-form-row">
                       <div>
-                        <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="name" className="contact-form-label">
                           Full Name *
                         </Label>
                         <Input
@@ -156,13 +156,13 @@ const ContactPage = () => {
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="mt-1"
+                          className="contact-form-input"
                           placeholder="Your full name"
                         />
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                        <Label htmlFor="email" className="contact-form-label">
                           Email Address *
                         </Label>
                         <Input
@@ -172,14 +172,14 @@ const ContactPage = () => {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="mt-1"
+                          className="contact-form-input"
                           placeholder="your.email@example.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                      <Label htmlFor="subject" className="contact-form-label">
                         Subject *
                       </Label>
                       <Input
@@ -189,13 +189,13 @@ const ContactPage = () => {
                         required
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="contact-form-input"
                         placeholder="What is this message about?"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                      <Label htmlFor="message" className="contact-form-label">
                         Message *
                       </Label>
                       <Textarea
@@ -204,7 +204,7 @@ const ContactPage = () => {
                         required
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="mt-1"
+                        className="contact-form-textarea"
                         rows={6}
                         placeholder="Please provide details about your inquiry, how you'd like to get involved, or any questions you have about our campaigns..."
                       />
@@ -213,14 +213,14 @@ const ContactPage = () => {
                     <Button 
                       type="submit" 
                       disabled={isSubmitting}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                      className="contact-form-submit-btn"
                     >
                       {isSubmitting ? (
                         "Sending..."
                       ) : (
                         <>
                           Send Message
-                          <Send className="ml-2 h-4 w-4" />
+                          <Send className="contact-form-send-icon" />
                         </>
                       )}
                     </Button>
@@ -231,21 +231,21 @@ const ContactPage = () => {
 
             {/* Map and Additional Info */}
             <div>
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
-                <p className="text-gray-600">
+              <div className="contact-map-header">
+                <h2 className="contact-map-title">Find Us</h2>
+                <p className="contact-map-description">
                   Visit us at Makerere University campus or connect with us through our social media channels.
                 </p>
               </div>
 
               {/* Map Placeholder */}
-              <Card className="mb-8">
-                <CardContent className="p-0">
-                  <div className="h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <div className="text-center text-gray-500">
-                      <MapPin className="h-12 w-12 mx-auto mb-2" />
+              <Card className="contact-map-card">
+                <CardContent className="contact-map-card-content">
+                  <div className="contact-map-placeholder">
+                    <div className="contact-map-placeholder-content">
+                      <MapPin className="contact-map-icon" />
                       <p>Interactive Map</p>
-                      <p className="text-sm">Makerere University Campus</p>
+                      <p className="contact-map-location">Makerere University Campus</p>
                     </div>
                   </div>
                 </CardContent>
@@ -254,30 +254,30 @@ const ContactPage = () => {
               {/* Social Media */}
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-xl font-semibold">Follow Us</CardTitle>
+                  <CardTitle className="contact-social-title">Follow Us</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 mb-4">
+                  <p className="contact-social-description">
                     Stay updated with our latest campaigns and activities through our social media channels.
                   </p>
-                  <div className="flex space-x-4">
+                  <div className="contact-social-icons">
                     <a 
                       href="#" 
-                      className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+                      className="contact-social-icon contact-social-facebook"
                     >
-                      <Facebook className="h-5 w-5" />
+                      <Facebook className="contact-social-svg" />
                     </a>
                     <a 
                       href="#" 
-                      className="flex items-center justify-center w-10 h-10 bg-blue-400 text-white rounded-full hover:bg-blue-500 transition-colors"
+                      className="contact-social-icon contact-social-twitter"
                     >
-                      <Twitter className="h-5 w-5" />
+                      <Twitter className="contact-social-svg" />
                     </a>
                     <a 
                       href="#" 
-                      className="flex items-center justify-center w-10 h-10 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition-colors"
+                      className="contact-social-icon contact-social-instagram"
                     >
-                      <Instagram className="h-5 w-5" />
+                      <Instagram className="contact-social-svg" />
                     </a>
                   </div>
                 </CardContent>
@@ -288,15 +288,15 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-gray-600">Quick answers to common questions about our campaigns</p>
+      <section className="contact-faq-section">
+        <div className="contact-faq-container">
+          <div className="contact-faq-content">
+            <div className="contact-faq-header">
+              <h2 className="contact-faq-title">Frequently Asked Questions</h2>
+              <p className="contact-faq-description">Quick answers to common questions about our campaigns</p>
             </div>
 
-            <div className="space-y-6">
+            <div className="contact-faq-list">
               {[
                 {
                   question: "How can I get involved with the campaigns?",
@@ -315,10 +315,10 @@ const ContactPage = () => {
                   answer: "Absolutely! We welcome partnerships with businesses of all sizes. Whether through sponsorship, resource sharing, or collaborative initiatives, there are many ways to partner with us. Contact us to discuss partnership opportunities."
                 }
               ].map((faq, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                    <p className="text-gray-600">{faq.answer}</p>
+                <Card key={index} className="contact-faq-card">
+                  <CardContent className="contact-faq-card-content">
+                    <h3 className="contact-faq-question">{faq.question}</h3>
+                    <p className="contact-faq-answer">{faq.answer}</p>
                   </CardContent>
                 </Card>
               ))}

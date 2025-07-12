@@ -1,4 +1,4 @@
-
+import './CampaignsPage.css';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
@@ -85,30 +85,30 @@ const CampaignsPage = () => {
     }
   ];
 
-  const getStatusColor = (status: string) => {
+  const getStatusClass = (status: string) => {
     switch (status) {
       case 'Active':
-        return 'bg-green-500';
+        return 'campaign-status-active';
       case 'In Development':
-        return 'bg-blue-500';
+        return 'campaign-status-development';
       case 'Planning Phase':
-        return 'bg-yellow-500';
+        return 'campaign-status-planning';
       default:
-        return 'bg-gray-500';
+        return 'campaign-status-default';
     }
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="campaigns-root">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      <section className="campaigns-hero">
+        <div className="campaigns-container">
+          <h1 className="campaigns-hero-title">
             Our Core Campaigns
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="campaigns-hero-description">
             Discover the five transformative initiatives that form the backbone of our 
             Build Back Better movement at Makerere University
           </p>
@@ -116,57 +116,57 @@ const CampaignsPage = () => {
       </section>
 
       {/* Campaigns Grid */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="space-y-12">
+      <section className="campaigns-list-section">
+        <div className="campaigns-container">
+          <div className="campaigns-list">
             {campaigns.map((campaign, index) => (
-              <Card key={campaign.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              <Card key={campaign.id} className="campaign-card">
+                <div className={`campaign-card-grid ${index % 2 === 1 ? 'campaign-card-grid-reverse' : ''}`}>
                   {/* Image */}
-                  <div className={`relative h-64 lg:h-auto ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className={`campaign-card-image-wrap ${index % 2 === 1 ? 'campaign-card-image-reverse' : ''}`}>
                     <img 
                       src={campaign.image} 
                       alt={campaign.title}
-                      className="w-full h-full object-cover"
+                      className="campaign-card-image"
                     />
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute top-4 left-4">
-                      <Badge className={`${getStatusColor(campaign.status)} text-white`}>
+                    <div className="campaign-card-image-overlay"></div>
+                    <div className="campaign-card-status-badge">
+                      <Badge className={getStatusClass(campaign.status)}>
                         {campaign.status}
                       </Badge>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-8 flex flex-col justify-center">
-                    <div className="flex items-center mb-4">
-                      <campaign.icon className="h-8 w-8 text-blue-600 mr-3" />
-                      <CardTitle className="text-2xl font-bold text-gray-900">
+                  <div className="campaign-card-content">
+                    <div className="campaign-card-header">
+                      <campaign.icon className="campaign-card-icon" />
+                      <CardTitle className="campaign-card-title">
                         {campaign.title}
                       </CardTitle>
                     </div>
                     
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="campaign-card-description">
                       {campaign.description}
                     </p>
                     
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="campaign-card-features">
+                      <h4 className="campaign-card-features-title">Key Features:</h4>
+                      <ul className="campaign-card-features-list">
                         {campaign.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-gray-600">
-                            <div className="w-2 h-2 bg-blue-600 rounded-full mr-2"></div>
+                          <li key={idx} className="campaign-card-feature">
+                            <span className="campaign-card-feature-dot"></span>
                             {feature}
                           </li>
                         ))}
                       </ul>
                     </div>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-gray-500">
+                    <div className="campaign-card-footer">
+                      <div className="campaign-card-impact">
                         <strong>Impact:</strong> {campaign.impact}
                       </div>
-                      <Button className="bg-orange-500 hover:bg-orange-600">
+                      <Button className="campaign-card-learn-btn">
                         Learn More
                       </Button>
                     </div>
@@ -179,20 +179,20 @@ const CampaignsPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <section className="campaigns-cta">
+        <div className="campaigns-container campaigns-cta-content">
+          <h2 className="campaigns-cta-title">
             Ready to Support These Campaigns?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="campaigns-cta-description">
             Your involvement can make a real difference in transforming Makerere University. 
             Join us in building back better.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+          <div className="campaigns-cta-buttons">
+            <Button size="lg" className="campaigns-cta-involved-btn">
               Get Involved
             </Button>
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="campaigns-cta-share-btn">
               Share Campaigns
             </Button>
           </div>

@@ -1,3 +1,4 @@
+import './JoinUsPage.css';
 import { Label } from '../components/ui/label';
 import { Heart, Users, Handshake, Share2, Mail, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
@@ -53,7 +54,7 @@ const JoinUsPage = () => {
         "Infrastructure funding"
       ],
       buttonText: "Donate Now",
-      color: "bg-red-500 hover:bg-red-600"
+      colorClass: "joinus-donate-btn"
     },
     {
       icon: Users,
@@ -66,7 +67,7 @@ const JoinUsPage = () => {
         "Community outreach"
       ],
       buttonText: "Volunteer",
-      color: "bg-blue-500 hover:bg-blue-600"
+      colorClass: "joinus-volunteer-btn"
     },
     {
       icon: Handshake,
@@ -79,7 +80,7 @@ const JoinUsPage = () => {
         "Joint initiatives"
       ],
       buttonText: "Partner With Us",
-      color: "bg-green-500 hover:bg-green-600"
+      colorClass: "joinus-partner-btn"
     },
     {
       icon: Share2,
@@ -92,78 +93,84 @@ const JoinUsPage = () => {
         "Community engagement"
       ],
       buttonText: "Share Now",
-      color: "bg-purple-500 hover:bg-purple-600"
+      colorClass: "joinus-share-btn"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="joinus-root">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-orange-500 via-orange-600 to-red-600">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+      <section className="joinus-hero">
+        <div className="joinus-hero-container">
+          <div className="joinus-hero-content">
+            <h1 className="joinus-hero-title">
               Join Us: Be Part of the 
-              <span className="block bg-gradient-to-r from-yellow-200 to-white bg-clip-text text-transparent">
+              <span className="joinus-hero-title-highlight">
                 Change!
               </span>
             </h1>
-            <p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="joinus-hero-description">
               Every great movement starts with individuals who believe in change. 
               Your involvement, no matter how small, contributes to transforming Makerere University 
               and impacting thousands of lives.
             </p>
-            <div className="flex items-center justify-center space-x-2 text-orange-100">
-              <CheckCircle className="h-5 w-5" />
-              <span className="font-medium">Multiple ways to contribute</span>
-              <span className="mx-2">•</span>
-              <CheckCircle className="h-5 w-5" />
-              <span className="font-medium">Direct impact on students</span>
-              <span className="mx-2">•</span>
-              <CheckCircle className="h-5 w-5" />
-              <span className="font-medium">Building lasting change</span>
+            <div className="joinus-hero-badges">
+              <div className="joinus-hero-badge">
+                <CheckCircle className="joinus-hero-badge-icon" />
+                <span className="joinus-hero-badge-text">Multiple ways to contribute</span>
+              </div>
+              <div className="joinus-hero-badge-divider">•</div>
+              <div className="joinus-hero-badge">
+                <CheckCircle className="joinus-hero-badge-icon" />
+                <span className="joinus-hero-badge-text">Direct impact on students</span>
+              </div>
+              <div className="joinus-hero-badge-divider">•</div>
+              <div className="joinus-hero-badge">
+                <CheckCircle className="joinus-hero-badge-icon" />
+                <span className="joinus-hero-badge-text">Building lasting change</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Ways to Contribute */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Four Ways to Make a Difference</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <section className="joinus-ways-section">
+        <div className="joinus-ways-container">
+          <div className="joinus-ways-header">
+            <h2 className="joinus-ways-title">Four Ways to Make a Difference</h2>
+            <p className="joinus-ways-description">
               Choose how you'd like to contribute to our Build Back Better movement
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="joinus-ways-grid">
             {waysToBrinBenefiHelp.map((way, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow h-full">
-                <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <way.icon className="h-8 w-8 text-gray-700" />
+              <Card key={index} className="joinus-way-card">
+                <CardHeader className="joinus-way-card-header">
+                  <div className="joinus-way-icon-bg">
+                    <way.icon className="joinus-way-icon" />
                   </div>
-                  <CardTitle className="text-xl font-bold">{way.title}</CardTitle>
+                  <CardTitle className="joinus-way-title">{way.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-col h-full">
-                  <p className="text-gray-600 mb-6 flex-grow">{way.description}</p>
+                <CardContent className="joinus-way-card-content">
+                  <p className="joinus-way-description">{way.description}</p>
                   
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-3">What you can do:</h4>
-                    <ul className="space-y-2">
+                  <div className="joinus-way-actions">
+                    <h4 className="joinus-way-actions-title">What you can do:</h4>
+                    <ul className="joinus-way-actions-list">
                       {way.actions.map((action, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+                        <li key={idx} className="joinus-way-action">
+                          <span className="joinus-way-action-dot"></span>
                           {action}
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  <Button className={`${way.color} text-white mt-auto`}>
+                  <Button className={`${way.colorClass} joinus-way-btn`}>
                     {way.buttonText}
                   </Button>
                 </CardContent>
@@ -174,23 +181,23 @@ const JoinUsPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <Mail className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-              <p className="text-lg text-gray-600">
+      <section className="joinus-contact-section">
+        <div className="joinus-contact-container">
+          <div className="joinus-contact-content">
+            <div className="joinus-contact-header">
+              <Mail className="joinus-contact-icon" />
+              <h2 className="joinus-contact-title">Get in Touch</h2>
+              <p className="joinus-contact-description">
                 Have questions about our campaigns or want to discuss partnership opportunities? 
                 We'd love to hear from you!
               </p>
             </div>
 
-            <Card className="shadow-lg">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+            <Card className="joinus-contact-card">
+              <CardContent className="joinus-contact-card-content">
+                <form onSubmit={handleSubmit} className="joinus-contact-form">
+                  <div className="joinus-contact-form-group">
+                    <Label htmlFor="name" className="joinus-contact-label">
                       Full Name *
                     </Label>
                     <Input
@@ -200,13 +207,13 @@ const JoinUsPage = () => {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="mt-1"
+                      className="joinus-contact-input"
                       placeholder="Enter your full name"
                     />
                   </div>
 
-                  <div>
-                    <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  <div className="joinus-contact-form-group">
+                    <Label htmlFor="email" className="joinus-contact-label">
                       Email Address *
                     </Label>
                     <Input
@@ -216,13 +223,13 @@ const JoinUsPage = () => {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="mt-1"
+                      className="joinus-contact-input"
                       placeholder="Enter your email address"
                     />
                   </div>
 
-                  <div>
-                    <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                  <div className="joinus-contact-form-group">
+                    <Label htmlFor="message" className="joinus-contact-label">
                       Message *
                     </Label>
                     <Textarea
@@ -231,7 +238,7 @@ const JoinUsPage = () => {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="mt-1"
+                      className="joinus-contact-textarea"
                       rows={5}
                       placeholder="Tell us about your interest in our campaigns, how you'd like to contribute, or any questions you have..."
                     />
@@ -240,23 +247,23 @@ const JoinUsPage = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3"
+                    className="joinus-contact-submit-btn"
                   >
                     {isSubmitting ? (
                       "Sending..."
                     ) : (
                       <>
                         Send Message
-                        <Send className="ml-2 h-4 w-4" />
+                        <Send className="joinus-contact-send-icon" />
                       </>
                     )}
                   </Button>
                 </form>
 
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-sm text-gray-600 text-center">
+                <div className="joinus-contact-extra">
+                  <p className="joinus-contact-extra-text">
                     You can also reach us directly at{' '}
-                    <a href="mailto:info@bulumba.ug" className="text-blue-600 hover:underline">
+                    <a href="mailto:info@bulumba.ug" className="joinus-contact-extra-link">
                       info@bulumba.ug
                     </a>
                     {' '}or follow us on social media for updates.
@@ -269,39 +276,39 @@ const JoinUsPage = () => {
       </section>
 
       {/* Success Stories */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Our Growing Community</h2>
-            <p className="text-lg text-gray-600">See the impact we're making together</p>
+      <section className="joinus-success-section">
+        <div className="joinus-success-container">
+          <div className="joinus-success-header">
+            <h2 className="joinus-success-title">Join Our Growing Community</h2>
+            <p className="joinus-success-description">See the impact we're making together</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="font-semibold text-gray-900 mb-2">Active Volunteers</div>
-                <p className="text-sm text-gray-600">
+          <div className="joinus-success-grid">
+            <Card className="joinus-success-card">
+              <CardContent className="joinus-success-card-content">
+                <div className="joinus-success-number joinus-success-number-blue">500+</div>
+                <div className="joinus-success-label">Active Volunteers</div>
+                <p className="joinus-success-text">
                   Students and community members contributing their time and skills
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
-                <div className="font-semibold text-gray-900 mb-2">Partner Organizations</div>
-                <p className="text-sm text-gray-600">
+            <Card className="joinus-success-card">
+              <CardContent className="joinus-success-card-content">
+                <div className="joinus-success-number joinus-success-number-green">50+</div>
+                <div className="joinus-success-label">Partner Organizations</div>
+                <p className="joinus-success-text">
                   Businesses and institutions supporting our mission
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-orange-600 mb-2">1,000+</div>
-                <div className="font-semibold text-gray-900 mb-2">Students Impacted</div>
-                <p className="text-sm text-gray-600">
+            <Card className="joinus-success-card">
+              <CardContent className="joinus-success-card-content">
+                <div className="joinus-success-number joinus-success-number-orange">1,000+</div>
+                <div className="joinus-success-label">Students Impacted</div>
+                <p className="joinus-success-text">
                   Lives changed through our campaigns and initiatives
                 </p>
               </CardContent>
