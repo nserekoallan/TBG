@@ -91,11 +91,11 @@ const Footer = () => {
               </div>
               <div className="footer-contact-row">
                 <Mail className="footer-contact-icon" />
-                <span className="footer-contact-text">info@bulumba.ug</span>
+                <span className="footer-contact-text">timothybulumba4@gmail.com</span>
               </div>
               <div className="footer-contact-row">
                 <Phone className="footer-contact-icon" />
-                <span className="footer-contact-text">+256 XXX XXX XXX</span>
+                <span className="footer-contact-text">+256 703 743 491</span>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="footer-copyright">
-            © 2024 Bulumba Build Back Better. All rights reserved.
+            © 2025 Bulumba Build Back Better. All rights reserved.
           </p>
         </div>
       </div>
