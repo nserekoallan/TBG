@@ -10,78 +10,58 @@ const CampaignsPage = () => {
   const campaigns = [
     {
       id: 1,
-      title: "Guild Scholars Fund",
-      description: "A comprehensive financial assistance program designed to support academically excellent but financially disadvantaged students at Makerere University. This fund provides scholarships, emergency financial aid, and academic resources to ensure no student's education is compromised due to financial constraints.",
+      title: "GUILD SCHOLARS FUND",
+      description: "This fund is dedicated to providing financial assistance to deserving students at Makerere university. By alleviating financial burdens, through providing half tuition scholarships at most 50% tuition fee coverage for financially disadvantaged students. This could be done through Crowd sourcing and digital fundraising, corporate partnerships, grant applications and event-based fundraising to save a Makererenean.",
       icon: Users,
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Active",
-      impact: "500+ Students Supported",
+      
       features: [
-        "Merit-based scholarships",
-        "Emergency financial assistance",
-        "Academic resource support",
-        "Mentorship programs"
       ]
     },
     {
       id: 2,
-      title: "Campus Coin",
-      description: "A revolutionary digital payment system tailored specifically for Makerere University campus. Campus Coin enables seamless transactions for cafeteria meals, bookstore purchases, accommodation fees, and other campus services, creating a cashless and efficient payment ecosystem.",
+      title: "CAMPUS COIN",
+      description: "Establishing a student SACCO at Makerere University with a focus on fixed accounts accessibility only after graduation with an annual interest rate. This will promote financial discipline and prepare students for post-campus life.",
       icon: Coins,
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "In Development",
-      impact: "40,000+ Users Expected",
       features: [
-        "Cashless campus transactions",
-        "Mobile wallet integration",
-        "Real-time payment tracking",
-        "Merchant network expansion"
+        "1. Pursuing further studies",
+        "2. Job transitions",
+        "3. Entrepreneurship",
+        "4. Promoting financial independence",
+        "5. Financial security post-graduation",
+        "Saving as low as 5000 per month"
       ]
     },
     {
       id: 3,
-      title: "Innovation Hubs around the Perimeter Wall",
-      description: "Establishing state-of-the-art innovation and technology hubs strategically located around Makerere's perimeter wall. These spaces will serve as incubators for student startups, research projects, and collaborative innovation initiatives, fostering entrepreneurship and technological advancement.",
+      title: "GUILD MUSEUM",
+      description: "We will establish a dedicated Guild museum to preserve and showcase the rich history, achievements and contributions of the Makerere University Students Guild. Celebrating its legacy for future generations. Lighting up leisure parks within Makerere university to enhance safety and aesthetics during night hours.",
       icon: Lightbulb,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Planning Phase",
       impact: "10+ Hub Locations",
-      features: [
-        "Co-working spaces",
-        "Tech incubators",
-        "Startup support programs",
-        "Innovation workshops"
-      ]
+      features: []
     },
     {
       id: 4,
-      title: "Digitalization, Voice of Makerere Radio & TV",
-      description: "Modernizing and expanding Makerere's media presence through comprehensive digitalization of Voice of Makerere Radio and the launch of a university television station. This initiative aims to enhance communication, provide educational content, and give students practical media experience.",
+      title: "SCHOOL-BASED INNOVATION SHOWROOMS AROUND THE UNIVERSITY PERIMETER WALL.",
+      description: "We envision transforming the perimeter wall into a dynamic space for innovation showrooms by establishing strategically located innovation showrooms. This can be done through the Makerere university innovation hub. This can easily transform Makerere into the \"SILICON VALLEY\" of East Africa. This provides students with modern workspaces, resources and mentorship to develop ground breaking ideas, fastening entrepreneurship and technological advancement within the university and surrounding community.",
       icon: Radio,
       image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Active",
-      impact: "Campus-wide Coverage",
-      features: [
-        "Digital broadcasting upgrade",
-        "TV station launch",
-        "Student media training",
-        "Educational programming"
-      ]
+      features: []
     },
     {
       id: 5,
-      title: "Lighting up Makerere & Guild Museum",
-      description: "A comprehensive infrastructure improvement project focused on enhancing campus lighting for safety and security, while establishing a dedicated Guild Museum to preserve and showcase Makerere's rich history, student achievements, and cultural heritage.",
+      title: "DIGITALIZATION, VOICE OF MAKERERE RADIO & TV",
+      description: "This focuses on fully digitalizing university operations i.e. Guild Sittings , students voices, health campaigns etc.. by upgrading our digital infrastructure and media platforms. We aim to enhance communication, improve access to information and provide students with cutting edge learning and broadcasting opportunities.",
       icon: Zap,
       image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Active",
-      impact: "100% Campus Coverage",
-      features: [
-        "LED lighting installation",
-        "Solar power integration",
-        "Museum establishment",
-        "Historical preservation"
-      ]
+      features: []
     }
   ];
 
@@ -151,7 +131,7 @@ const CampaignsPage = () => {
                     </p>
                     
                     <div className="campaign-card-features">
-                      <h4 className="campaign-card-features-title">Key Features:</h4>
+                      <h4 className="campaign-card-f:eatures-title">The funds can help students in:</h4>
                       <ul className="campaign-card-features-list">
                         {campaign.features.map((feature, idx) => (
                           <li key={idx} className="campaign-card-feature">

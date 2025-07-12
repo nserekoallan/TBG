@@ -31,10 +31,9 @@ const VisionPage = () => {
   ];
 
   const achievements = [
-    { number: "75+", label: "Years of Excellence", description: "Building on Makerere's legacy" },
-    { number: "40,000+", label: "Students", description: "Diverse academic community" },
-    { number: "9", label: "Colleges", description: "Comprehensive education" },
-    { number: "100+", label: "Programs", description: "Wide range of disciplines" }
+    { number: "300+", label: "Students", description: "Diverse academic community" },
+    { number: "10", label: "Colleges", description: "Comprehensive education" },
+    { number: "5", label: "Programs", description: "Wide range of disciplines" }
   ];
 
   return (
