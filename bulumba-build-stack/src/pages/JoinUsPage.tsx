@@ -14,7 +14,9 @@ const JoinUsPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    phone: '',
+    college: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -211,7 +213,36 @@ const JoinUsPage = () => {
                       placeholder="Enter your full name"
                     />
                   </div>
-
+                  <div className="joinus-contact-form-group">
+                    <Label htmlFor="phone" className="joinus-contact-label">
+                      Phone Number *
+                    </Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="text"
+                      required
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="joinus-contact-input"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                  <div className="joinus-contact-form-group">
+                    <Label htmlFor="college" className="joinus-contact-label">
+                      School/College *
+                    </Label>
+                    <Input
+                      id="college"
+                      name="college"
+                      type="text"
+                      required
+                      value={formData.college}
+                      onChange={handleInputChange}
+                      className="joinus-contact-input"
+                      placeholder="Enter your school/college"
+                    />
+                  </div>
                   <div className="joinus-contact-form-group">
                     <Label htmlFor="email" className="joinus-contact-label">
                       Email Address *
