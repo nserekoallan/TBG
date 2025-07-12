@@ -1,7 +1,7 @@
 import "./Footer.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Twitter, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, X } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -105,7 +105,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-social">
             <a href="https://x.com/TBulumba" className="footer-social-link">
-              <Twitter className="footer-social-icon" />
+              <X className="footer-social-icon" />
             </a>
             <a
               href="https://www.linkedin.com/in/bulumba-timothy-120bb126b/"
