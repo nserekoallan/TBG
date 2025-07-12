@@ -39,7 +39,7 @@ const JoinUsPage = () => {
         title: "Message Sent Successfully!",
         description: "Thank you for your interest. We'll get back to you soon.",
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', phone: '', college: '' });
       setIsSubmitting(false);
     }, 1000);
   };
