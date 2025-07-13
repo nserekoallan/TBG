@@ -123,7 +123,7 @@ const AboutPage = () => {
           <div className="about-hero-content">
             <h1 className="about-hero-title">
               About Our
-              <span className="about-hero-highlight">Campaign</span>
+              <span className="about-hero-highlight"> Campaign</span>
             </h1>
             <p className="about-hero-description">
               Bulumba's Build Back Better plan is a transformative initiative
@@ -177,136 +177,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Our Values */}
-      <section className="about-values">
-        <div className="about-container">
-          <div className="about-section-header">
-            <h2 className="about-section-title">Our Core Values</h2>
-            <p className="about-section-description">
-              The principles that guide our work and define our approach to
-              transforming Makerere University
-            </p>
-          </div>
-
-          <div className="about-values-grid">
-            {values.map((value, index) => (
-              <Card key={index} className="about-value-card">
-                <CardHeader>
-                  <div className="about-value-icon-bg">
-                    <value.icon className="about-value-icon" />
-                  </div>
-                  <CardTitle className="about-value-title">
-                    {value.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="about-value-description">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="about-team">
-        <div className="about-container">
-          <div className="about-section-header">
-            <h2 className="about-section-title">Meet Our Team</h2>
-            <p className="about-section-description">
-              Dedicated leaders working tirelessly to make the Build Back Better
-              vision a reality
-            </p>
-          </div>
-
-          <div className="about-team-grid">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="about-team-card">
-                <CardHeader>
-                  <div className="about-team-image-bg">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="about-team-image"
-                    />
-                  </div>
-                  <CardTitle className="about-team-name">
-                    {member.name}
-                  </CardTitle>
-                  <p className="about-team-role">{member.role}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="about-team-description">{member.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="about-timeline">
-        <div className="about-container">
-          <div className="about-section-header">
-            <h2 className="about-section-title">Our Journey</h2>
-            <p className="about-section-description">
-              Key milestones in our Build Back Better campaign
-            </p>
-          </div>
-
-          <div className="about-timeline-list">
-            <div className="about-timeline-items">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="about-timeline-row">
-                  <div
-                    className={`about-timeline-dot ${
-                      milestone.status === "completed"
-                        ? "about-timeline-dot-completed"
-                        : milestone.status === "in-progress"
-                        ? "about-timeline-dot-inprogress"
-                        : "about-timeline-dot-planned"
-                    }`}
-                  ></div>
-                  <div className="about-timeline-card-wrap">
-                    <Card className="about-timeline-card">
-                      <CardContent className="about-timeline-card-content">
-                        <div className="about-timeline-card-header">
-                          <h3 className="about-timeline-title">
-                            {milestone.title}
-                          </h3>
-                          <div className="about-timeline-badges">
-                            <Badge
-                              variant="outline"
-                              className="about-timeline-year"
-                            >
-                              {milestone.year}
-                            </Badge>
-                            <Badge
-                              className={`about-timeline-status ${
-                                milestone.status === "completed"
-                                  ? "about-timeline-status-completed"
-                                  : milestone.status === "in-progress"
-                                  ? "about-timeline-status-inprogress"
-                                  : "about-timeline-status-planned"
-                              }`}
-                            >
-                              {milestone.status.replace("-", " ")}
-                            </Badge>
-                          </div>
-                        </div>
-                        <p className="about-timeline-description">
-                          {milestone.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Impact Stats */}
       <section className="about-impact">
         <div className="about-container">
@@ -321,12 +191,12 @@ const AboutPage = () => {
           <div className="about-impact-grid">
             {[
               {
-                number: "500+",
+                number: "300+",
                 label: "Students Supported",
                 description: "Through various programs",
               },
               {
-                number: "50+",
+                number: "2",
                 label: "Partners",
                 description: "Organizations & businesses",
               },
@@ -334,11 +204,6 @@ const AboutPage = () => {
                 number: "5",
                 label: "Active Campaigns",
                 description: "Comprehensive initiatives",
-              },
-              {
-                number: "100%",
-                label: "Transparency",
-                description: "Open reporting & accountability",
               },
             ].map((stat, index) => (
               <div key={index} className="about-impact-stat">
@@ -365,7 +230,7 @@ const AboutPage = () => {
           <div className="about-cta-buttons">
             <Button asChild size="lg" className="about-cta-join-btn">
               <Link to="/join">
-                Get Involved Today
+                Join Us
                 <ArrowRight className="about-cta-arrow" />
               </Link>
             </Button>

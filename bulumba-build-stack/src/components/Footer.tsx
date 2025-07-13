@@ -2,7 +2,7 @@ import "./Footer.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Linkedin, X, Facebook } from "lucide-react";
-import B3 from "../assets/images/B3.jpg";
+import B3 from "../assets/images/B2.jpg";
 
 const Footer = () => {
   return (
@@ -92,7 +92,9 @@ const Footer = () => {
               </div>
               <div className="footer-contact-row">
                 <Mail className="footer-contact-icon" />
-                <span className="footer-contact-text">timothybulumba4@gmail.com</span>
+                <span className="footer-contact-text">
+                  timothybulumba4@gmail.com
+                </span>
               </div>
               <div className="footer-contact-row">
                 <Phone className="footer-contact-icon" />
@@ -134,6 +136,15 @@ const Footer = () => {
           <p className="footer-copyright">
             © 2025 Bulumba Build Back Better. All rights reserved.
           </p>
+          <a
+            href="https://www.linkedin.com/in/waluube-alvin-david-75778336b/"
+            className="footer-siteby-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            Site By Waluube Alvin David
+          </a>
         </div>
       </div>
     </footer>

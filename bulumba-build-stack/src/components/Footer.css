@@ -12,7 +12,7 @@
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -181,4 +181,25 @@
   object-fit: cover;
   border-radius: 50%;
   display: block;
+}
+
+.footer-siteby-link {
+  margin-left: 1094px;
+  margin-bottom: 9px;
+  z-index: 9999;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: #fff;
+  border-radius: 1.5rem;
+  padding: 8px 18px;
+  font-size: 0.7rem;
+  text-decoration: none;
+  opacity: 0.92;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.18);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  letter-spacing: 0.2px;
+}
+.footer-siteby-link:hover {
+  transform: scale(1.08) translateY(-4px);
+  background: linear-gradient(135deg, #0077b5 0%, #2563eb 100%);
+  color: #fff;
 }

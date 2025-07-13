@@ -540,6 +540,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-left: 220px;
   margin-top: 2rem;
 }
 
@@ -596,7 +597,7 @@
 /* CTA Section */
 .about-cta {
   padding: 3rem 0;
-  background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
+  background: #696969;
   color: #fff;
   position: relative;
   overflow: hidden;

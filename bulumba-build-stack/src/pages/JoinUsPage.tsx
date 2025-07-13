@@ -1,137 +1,149 @@
-import './JoinUsPage.css';
-import { Label } from '../components/ui/label';
-import { Heart, Users, Handshake, Share2, Mail, Send, CheckCircle } from 'lucide-react';
-import { useToast } from '../hooks/use-toast';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
+import "./JoinUsPage.css";
+import { Label } from "../components/ui/label";
+import {
+  Heart,
+  Users,
+  Handshake,
+  Share2,
+  Mail,
+  Send,
+  CheckCircle,
+} from "lucide-react";
+import { useToast } from "../hooks/use-toast";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { useNavigate } from "react-router-dom";
 
 const JoinUsPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    phone: '',
-    college: '',
+    name: "",
+    email: "",
+    message: "",
+    phone: "",
+    college: "",
   });
+
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message Sent Successfully!",
         description: "Thank you for your interest. We'll get back to you soon.",
       });
-      setFormData({ name: '', email: '', message: '', phone: '', college: '' });
+      setFormData({ name: "", email: "", message: "", phone: "", college: "" });
       setIsSubmitting(false);
     }, 1000);
   };
 
   const waysToBrinBenefiHelp = [
     {
-      icon: Heart,
-      title: "Donate",
-      description: "Support our campaigns through financial contributions that directly impact student lives and university infrastructure.",
-      actions: [
-        "One-time donations",
-        "Monthly giving programs",
-        "Scholarship sponsorships",
-        "Infrastructure funding"
-      ],
-      buttonText: "Donate Now",
-      colorClass: "joinus-donate-btn"
-    },
-    {
       icon: Users,
       title: "Volunteer",
-      description: "Join our team of dedicated volunteers and contribute your time and skills to make our campaigns successful.",
+      description:
+        "Join our team of dedicated volunteers and contribute your time and skills to make our campaigns successful.",
       actions: [
         "Event organization",
         "Student mentorship",
         "Campaign promotion",
-        "Community outreach"
+        "Community outreach",
       ],
       buttonText: "Volunteer",
-      colorClass: "joinus-volunteer-btn"
+      colorClass: "joinus-volunteer-btn",
     },
     {
       icon: Handshake,
       title: "Partner",
-      description: "Collaborate with us as an organization, business, or institution to amplify our impact and reach.",
+      description:
+        "Collaborate with us as an organization, business, or institution to amplify our impact and reach.",
       actions: [
         "Corporate partnerships",
         "Academic collaborations",
         "Resource sharing",
-        "Joint initiatives"
+        "Joint initiatives",
       ],
       buttonText: "Partner With Us",
-      colorClass: "joinus-partner-btn"
+      colorClass: "joinus-partner-btn",
     },
     {
       icon: Share2,
       title: "Share",
-      description: "Help spread the word about our mission by sharing our campaigns and engaging your networks.",
+      description:
+        "Help spread the word about our mission by sharing our campaigns and engaging your networks.",
       actions: [
         "Social media sharing",
         "Word-of-mouth promotion",
         "Content creation",
-        "Community engagement"
+        "Community engagement",
       ],
       buttonText: "Share Now",
-      colorClass: "joinus-share-btn"
-    }
+      colorClass: "joinus-share-btn",
+    },
   ];
 
   return (
     <div className="joinus-root">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="joinus-hero">
         <div className="joinus-hero-container">
           <div className="joinus-hero-content">
             <h1 className="joinus-hero-title">
-              Join Us: Be Part of the 
-              <span className="joinus-hero-title-highlight">
-                Change!
-              </span>
+              Join Us: Be Part of the
+              <span className="joinus-hero-title-highlight">Change</span>
             </h1>
             <p className="joinus-hero-description">
-              Every great movement starts with individuals who believe in change. 
-              Your involvement, no matter how small, contributes to transforming Makerere University 
-              and impacting thousands of lives.
+              Every great movement starts with individuals who believe in
+              change. Your involvement, no matter how small, contributes to the
+              Building Back Better plan and impacting thousands of lives.
             </p>
             <div className="joinus-hero-badges">
               <div className="joinus-hero-badge">
                 <CheckCircle className="joinus-hero-badge-icon" />
-                <span className="joinus-hero-badge-text">Multiple ways to contribute</span>
+                <span className="joinus-hero-badge-text">
+                  Multiple ways to contribute
+                </span>
               </div>
               <div className="joinus-hero-badge-divider">•</div>
               <div className="joinus-hero-badge">
                 <CheckCircle className="joinus-hero-badge-icon" />
-                <span className="joinus-hero-badge-text">Direct impact on students</span>
+                <span className="joinus-hero-badge-text">
+                  Direct impact on students
+                </span>
               </div>
               <div className="joinus-hero-badge-divider">•</div>
               <div className="joinus-hero-badge">
                 <CheckCircle className="joinus-hero-badge-icon" />
-                <span className="joinus-hero-badge-text">Building lasting change</span>
+                <span className="joinus-hero-badge-text">
+                  Building lasting change
+                </span>
               </div>
             </div>
           </div>
@@ -142,12 +154,15 @@ const JoinUsPage = () => {
       <section className="joinus-ways-section">
         <div className="joinus-ways-container">
           <div className="joinus-ways-header">
-            <h2 className="joinus-ways-title">Four Ways to Make a Difference</h2>
+            <h2 className="joinus-ways-title">
+              Four Ways to Make a Difference
+            </h2>
             <p className="joinus-ways-description">
-              Choose how you'd like to contribute to our Build Back Better movement
+              Choose how you'd like to contribute to our Build Back Better
+              movement
             </p>
           </div>
-          
+
           <div className="joinus-ways-grid">
             {waysToBrinBenefiHelp.map((way, index) => (
               <Card key={index} className="joinus-way-card">
@@ -155,13 +170,17 @@ const JoinUsPage = () => {
                   <div className="joinus-way-icon-bg">
                     <way.icon className="joinus-way-icon" />
                   </div>
-                  <CardTitle className="joinus-way-title">{way.title}</CardTitle>
+                  <CardTitle className="joinus-way-title">
+                    {way.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="joinus-way-card-content">
                   <p className="joinus-way-description">{way.description}</p>
-                  
+
                   <div className="joinus-way-actions">
-                    <h4 className="joinus-way-actions-title">What you can do:</h4>
+                    <h4 className="joinus-way-actions-title">
+                      What you can do:
+                    </h4>
                     <ul className="joinus-way-actions-list">
                       {way.actions.map((action, idx) => (
                         <li key={idx} className="joinus-way-action">
@@ -171,8 +190,17 @@ const JoinUsPage = () => {
                       ))}
                     </ul>
                   </div>
-                  
-                  <Button className={`${way.colorClass} joinus-way-btn`}>
+
+                  <Button
+                    onClick={
+                      way.title === "Volunteer"
+                        ? () => navigate("/volunteer")
+                        : way.title === 'Partner'
+                        ? () => navigate("/partner")
+                        : undefined
+                    }
+                    className={`${way.colorClass} joinus-way-btn`}
+                  >
                     {way.buttonText}
                   </Button>
                 </CardContent>
@@ -190,8 +218,8 @@ const JoinUsPage = () => {
               <Mail className="joinus-contact-icon" />
               <h2 className="joinus-contact-title">Get in Touch</h2>
               <p className="joinus-contact-description">
-                Have questions about our campaigns or want to discuss partnership opportunities? 
-                We'd love to hear from you!
+                Have questions about our campaigns or want to discuss
+                partnership opportunities? We'd love to hear from you!
               </p>
             </div>
 
@@ -275,8 +303,8 @@ const JoinUsPage = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="joinus-contact-submit-btn"
                   >
@@ -293,11 +321,14 @@ const JoinUsPage = () => {
 
                 <div className="joinus-contact-extra">
                   <p className="joinus-contact-extra-text">
-                    You can also reach us directly at{' '}
-                    <a href="mailto:timothybulumba4@gmail.com" className="joinus-contact-extra-link">
+                    You can also reach us directly at{" "}
+                    <a
+                      href="mailto:timothybulumba4@gmail.com"
+                      className="joinus-contact-extra-link"
+                    >
                       timothybulumba4@gmail.com
-                    </a>
-                    {' '}or follow us on social media for updates.
+                    </a>{" "}
+                    or follow us on social media for updates.
                   </p>
                 </div>
               </CardContent>
@@ -311,33 +342,44 @@ const JoinUsPage = () => {
         <div className="joinus-success-container">
           <div className="joinus-success-header">
             <h2 className="joinus-success-title">Join Our Growing Community</h2>
-            <p className="joinus-success-description">See the impact we're making together</p>
+            <p className="joinus-success-description">
+              See the impact we're making together
+            </p>
           </div>
-          
+
           <div className="joinus-success-grid">
             <Card className="joinus-success-card">
               <CardContent className="joinus-success-card-content">
-                <div className="joinus-success-number joinus-success-number-blue">500+</div>
+                <div className="joinus-success-number joinus-success-number-blue">
+                  500+
+                </div>
                 <div className="joinus-success-label">Active Volunteers</div>
                 <p className="joinus-success-text">
-                  Students and community members contributing their time and skills
+                  Students and community members contributing their time and
+                  skills
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="joinus-success-card">
               <CardContent className="joinus-success-card-content">
-                <div className="joinus-success-number joinus-success-number-green">50+</div>
-                <div className="joinus-success-label">Partner Organizations</div>
+                <div className="joinus-success-number joinus-success-number-green">
+                  50+
+                </div>
+                <div className="joinus-success-label">
+                  Partner Organizations
+                </div>
                 <p className="joinus-success-text">
                   Businesses and institutions supporting our mission
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="joinus-success-card">
               <CardContent className="joinus-success-card-content">
-                <div className="joinus-success-number joinus-success-number-orange">1,000+</div>
+                <div className="joinus-success-number joinus-success-number-orange">
+                  1,000+
+                </div>
                 <div className="joinus-success-label">Students Impacted</div>
                 <p className="joinus-success-text">
                   Lives changed through our campaigns and initiatives

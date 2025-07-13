@@ -103,6 +103,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-left: 210px;
   margin-top: 2rem;
 }
 
