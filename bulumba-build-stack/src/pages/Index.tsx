@@ -109,7 +109,7 @@ const Index = () => {
       <section className="index-featured-section">
         <div className="index-container">
           <div className="index-featured-header">
-            <h2 className="index-featured-title">Featured Campaigns</h2>
+            <h2 className="index-featured-title">Core Campaigns</h2>
             <p className="index-featured-description">
               Discover our key initiatives designed to transform the Makerere experience
             </p>
@@ -160,7 +160,7 @@ const Index = () => {
           </p>
           <div className="index-cta-buttons">
             <Button asChild size="lg" className="index-cta-join-btn">
-              <Link to="/join">Get Involved Today</Link>
+              <Link to="/join">Join Us</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="index-cta-vision-btn">
               <Link to="/vision">Learn Our Vision</Link>

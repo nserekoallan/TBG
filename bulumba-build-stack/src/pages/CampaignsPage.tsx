@@ -42,7 +42,7 @@ const CampaignsPage = () => {
       icon: Lightbulb,
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       status: "Planning Phase",
-      impact: "10+ Hub Locations",
+      impact: "",
       features: []
     },
     {
@@ -131,7 +131,6 @@ const CampaignsPage = () => {
                     </p>
                     
                     <div className="campaign-card-features">
-                      <h4 className="campaign-card-f:eatures-title">The funds can help students in:</h4>
                       <ul className="campaign-card-features-list">
                         {campaign.features.map((feature, idx) => (
                           <li key={idx} className="campaign-card-feature">
@@ -144,11 +143,9 @@ const CampaignsPage = () => {
                     
                     <div className="campaign-card-footer">
                       <div className="campaign-card-impact">
-                        <strong>Impact:</strong> {campaign.impact}
+                        <strong></strong> {campaign.impact}
                       </div>
-                      <Button className="campaign-card-learn-btn">
-                        Learn More
-                      </Button>
+                      
                     </div>
                   </div>
                 </div>
@@ -161,20 +158,8 @@ const CampaignsPage = () => {
       {/* Call to Action */}
       <section className="campaigns-cta">
         <div className="campaigns-container campaigns-cta-content">
-          <h2 className="campaigns-cta-title">
-            Ready to Support These Campaigns?
-          </h2>
-          <p className="campaigns-cta-description">
-            Your involvement can make a real difference in transforming Makerere University. 
-            Join us in building back better.
-          </p>
           <div className="campaigns-cta-buttons">
-            <Button size="lg" className="campaigns-cta-involved-btn">
-              Get Involved
-            </Button>
-            <Button size="lg" variant="outline" className="campaigns-cta-share-btn">
-              Share Campaigns
-            </Button>
+            
           </div>
         </div>
       </section>
