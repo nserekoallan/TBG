@@ -1,8 +1,10 @@
+/* Base Styles */
 .vision-root {
   min-height: 100vh;
-  background: #fff;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   color: #222;
   font-family: 'Segoe UI', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -11,6 +13,8 @@
   background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .vision-hero-container {
@@ -21,18 +25,37 @@
 
 .vision-hero-content {
   margin-bottom: 2rem;
+  animation: fadeInUp 1s cubic-bezier(.77,0,.175,1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .vision-hero-badge {
   display: inline-flex;
   align-items: center;
-  background: #fb923c;
+  background: linear-gradient(90deg, #fb923c, #facc15);
   color: #222;
   font-weight: 500;
   border-radius: 1rem;
   padding: 0.4rem 1.2rem;
   font-size: 1rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(251, 146, 60, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);}
+  50% { transform: scale(1.08);}
 }
 
 .vision-hero-badge-icon {
@@ -41,24 +64,42 @@
 }
 
 .vision-hero-title {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  letter-spacing: 1px;
+  animation: textPop 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+@keyframes textPop {
+  0% { opacity: 0; transform: scale(0.95);}
+  60% { opacity: 1; transform: scale(1.05);}
+  100% { opacity: 1; transform: scale(1);}
 }
 
 .vision-hero-title-gradient {
   background: linear-gradient(90deg, #fb923c, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   display: inline-block;
   margin-left: 0.5rem;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg);}
+  50% { filter: hue-rotate(15deg);}
 }
 
 .vision-hero-description {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+  animation: fadeInUp 1.5s 0.3s cubic-bezier(.77,0,.175,1) backwards;
 }
 
 /* Mission Statement */
@@ -74,9 +115,16 @@
 }
 
 .vision-mission-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-mission-card:hover {
+  box-shadow: 0 16px 48px rgba(37,99,235,0.22);
+  transform: scale(1.03) translateY(-4px);
 }
 
 .vision-mission-card-content {
@@ -93,6 +141,12 @@
   color: #2563eb;
   font-size: 2rem;
   margin-right: 0.5rem;
+  animation: floatBadge 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-8px);}
 }
 
 .vision-mission-title {
@@ -129,12 +183,18 @@
 .vision-pillars-header {
   text-align: center;
   margin-bottom: 2rem;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.175,1);
 }
 
 .vision-pillars-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s infinite;
 }
 
 .vision-pillars-description {
@@ -156,15 +216,23 @@
 }
 
 .vision-pillar-card {
-  background: #f8fafc;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
   text-align: center;
   padding: 1.5rem 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1), background 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  overflow: hidden;
 }
 
-.vision-pillar-card-content {
-  padding: 0;
+.vision-pillar-card:hover {
+  box-shadow: 0 16px 48px rgba(251,146,60,0.22);
+  transform: scale(1.04) translateY(-4px);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #222;
 }
 
 .vision-pillar-icon-bg {
@@ -176,11 +244,22 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem auto;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-pillar-card:hover .vision-pillar-icon-bg {
+  box-shadow: 0 4px 16px #fb923c44;
 }
 
 .vision-pillar-icon {
   color: #2563eb;
   font-size: 2rem;
+  transition: color 0.3s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-pillar-card:hover .vision-pillar-icon {
+  color: #fb923c;
 }
 
 .vision-pillar-title {
@@ -211,6 +290,11 @@
   font-weight: 600;
   margin-bottom: 1.5rem;
   text-align: center;
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s infinite;
 }
 
 .vision-detail-blocks {
@@ -247,6 +331,12 @@
   max-width: 350px;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-detail-img:hover {
+  box-shadow: 0 8px 32px rgba(251,146,60,0.22);
+  transform: scale(1.04) translateY(-4px);
 }
 
 .vision-detail-subtitle {
@@ -296,12 +386,18 @@
 .vision-stats-header {
   text-align: center;
   margin-bottom: 2rem;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.175,1);
 }
 
 .vision-stats-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s infinite;
 }
 
 .vision-stats-description {
@@ -326,13 +422,23 @@
 }
 
 .vision-stat-card {
-  background: #fff;
-  border-radius: 1rem;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
   text-align: center;
   padding: 1.5rem 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1), background 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-stat-card:hover {
+  box-shadow: 0 16px 48px rgba(251,146,60,0.22);
+  transform: scale(1.04) translateY(-4px);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #222;
 }
 
 .vision-stat-number {
@@ -340,6 +446,11 @@
   font-weight: bold;
   color: #fb923c;
   margin-bottom: 0.5rem;
+  transition: color 0.3s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-stat-card:hover .vision-stat-number {
+  color: #2563eb;
 }
 
 .vision-stat-label {
@@ -359,23 +470,31 @@
   padding: 3rem 0;
   background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1.2s cubic-bezier(.77,0,.175,1);
 }
 
 .vision-cta-container {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .vision-cta-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: textPop 1.2s cubic-bezier(.77,0,.175,1);
 }
 
 .vision-cta-description {
   font-size: 1.15rem;
   margin-bottom: 2rem;
+  animation: fadeInUp 1.2s 0.2s cubic-bezier(.77,0,.175,1) backwards;
 }
 
 .vision-cta-buttons {
@@ -392,28 +511,97 @@
   }
 }
 
-.vision-cta-join-btn {
-  background: #fb923c;
-  color: #222;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
+.vision-cta-join-btn,
+.vision-cta-campaigns-btn {
+  border-radius: 0.75rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  color: white;
   border: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  box-shadow: 0 6px 25px rgba(251, 146, 60, 0.2);
+  transition: 
+    background 0.3s cubic-bezier(.77,0,.175,1),
+    color 0.3s cubic-bezier(.97,0,.175,1),
+    box-shadow 0.3s cubic-bezier(.77,0,.175,1),
+    transform 0.3s cubic-bezier(.77,0,.175,1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.vision-cta-join-btn {
+  background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%);
+  color: #222;
+}
+
+.vision-cta-campaigns-btn {
+  background: rgba(255,255,255,0.15);
+  color: #ffffff;
+  border: 2px solid #2563eb;
+}
+
+.vision-cta-join-btn:hover,
+.vision-cta-campaigns-btn:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: #fff;
+  box-shadow: 0 12px 40px 0 #2563eb88;
+  transform: scale(1.06) translateY(-3px) rotate(-1deg);
 }
 
 .vision-cta-arrow {
   margin-left: 0.5rem;
   vertical-align: middle;
+  transition: transform 0.3s cubic-bezier(.77,0,.175,1);
 }
 
-.vision-cta-campaigns-btn {
-  background: #fff;
-  color: #2563eb;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #2563eb;
+.vision-cta-join-btn:hover .vision-cta-arrow,
+.vision-cta-campaigns-btn:hover .vision-cta-arrow {
+  transform: translateX(6px) scale(1.2);
+}
+
+/* --- Scroll Animations --- */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition:
+      opacity 0.8s cubic-bezier(.77,0,.175,1),
+      transform 0.8s cubic-bezier(.77,0,.175,1);
+    will-change: opacity, transform;
+  }
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Example usage:
+   Add 'scroll-animate' class to elements you want animated on scroll,
+   and toggle 'visible' class via JS or IntersectionObserver.
+*/
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .vision-hero-content {
+    padding: 2rem 1rem;
+  }
+  .vision-hero-title,
+  .vision-pillars-title,
+  .vision-detail-title,
+  .vision-stats-title,
+  .vision-cta-title {
+    font-size: 2rem;
+  }
+  .vision-pillars-grid,
+  .vision-stats-grid {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
 }

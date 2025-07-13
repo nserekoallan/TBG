@@ -2,7 +2,7 @@
   min-height: 100vh;
   background: #fff;
   color: #222;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 .campaigns-container {
@@ -40,16 +40,24 @@
   gap: 3rem;
 }
 
+/* --- Eye-catching Card and Button Effects --- */
 .campaign-card {
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
   overflow: hidden;
-  background: #fff;
-  transition: box-shadow 0.2s;
+  background: rgba(255, 255, 255, 0.85);
+  transition: box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    transform 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    background 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  backdrop-filter: blur(8px);
+  position: relative;
 }
 
 .campaign-card:hover {
-  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.12);
+  box-shadow: 0 12px 40px rgba(30, 58, 138, 0.18);
+  transform: scale(1.03) translateY(-4px);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #222;
 }
 
 .campaign-card-grid {
@@ -83,7 +91,7 @@
 .campaign-card-image-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.18);
+  background: rgba(0, 0, 0, 0.18);
   pointer-events: none;
 }
 
@@ -131,6 +139,11 @@
   color: #2563eb;
   font-size: 2rem;
   margin-right: 1rem;
+  transition: color 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.campaign-card:hover .campaign-card-icon {
+  color: #fb923c;
 }
 
 .campaign-card-title {
@@ -162,6 +175,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.07);
+  padding: 0.5rem;
+  backdrop-filter: blur(6px);
 }
 
 .campaign-card-feature {
@@ -169,15 +187,15 @@
   align-items: center;
   font-size: 0.98rem;
   color: #334155;
+  transition: background 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    color 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.5rem;
 }
 
-.campaign-card-feature-dot {
-  width: 8px;
-  height: 8px;
-  background: #2563eb;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  display: inline-block;
+.campaign-card-feature:hover {
+  background: linear-gradient(90deg, #2563eb22 0%, #fb923c22 100%);
+  color: #2563eb;
 }
 
 .campaign-card-footer {
@@ -192,12 +210,26 @@
 }
 
 .campaign-card-learn-btn {
-  background: #fb923c;
+  background: linear-gradient(90deg, #fb923c 0%, #f59e0b 100%);
   color: #222;
   border-radius: 0.5rem;
   font-weight: 500;
   padding: 0.5rem 1.2rem;
   border: none;
+  box-shadow: 0 2px 8px #fb923c44;
+  transition: background 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    color 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-card-learn-btn:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  color: #fff;
+  box-shadow: 0 8px 32px #2563eb55;
+  transform: scale(1.06) translateY(-2px);
 }
 
 .campaigns-cta {
@@ -239,6 +271,19 @@
   font-weight: 500;
   padding: 0.75rem 1.5rem;
   border: none;
+  transition: background 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    color 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  font-weight: 600;
+  box-shadow: 0 2px 8px #2563eb22;
+}
+
+.campaigns-cta-involved-btn:hover {
+  background: linear-gradient(90deg, #fb923c 0%, #2563eb 100%);
+  color: #fff;
+  box-shadow: 0 8px 32px #fb923c55;
+  transform: scale(1.06) translateY(-2px);
 }
 
 .campaigns-cta-share-btn {
@@ -248,4 +293,47 @@
   font-weight: 500;
   padding: 0.75rem 1.5rem;
   border: 2px solid #2563eb;
+  transition: background 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    color 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    box-shadow 0.3s cubic-bezier(0.77, 0, 0.175, 1),
+    transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  font-weight: 600;
+  box-shadow: 0 2px 8px #2563eb22;
+}
+
+.campaigns-cta-share-btn:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #fff 100%);
+  color: #2563eb;
+  box-shadow: 0 8px 32px #2563eb55;
+  transform: scale(1.06) translateY(-2px);
+}
+
+/* --- Scroll Animations --- */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1),
+      transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: opacity, transform;
+  }
+  .scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Example usage:
+   Add 'scroll-animate' class to elements you want animated on scroll,
+   and toggle 'visible' class via JS or IntersectionObserver.
+*/
+
+/* --- Responsive Design Enhancements --- */
+@media (max-width: 768px) {
+  .campaign-card-content {
+    padding: 1rem;
+  }
+  .campaigns-cta-title {
+    font-size: 1.5rem;
+  }
 }

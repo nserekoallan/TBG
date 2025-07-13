@@ -189,6 +189,18 @@
   transition: border-color 0.2s;
 }
 
+.contact-form-input:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 3px #fb923c44;
+  outline: none;
+}
+
+.contact-form-textarea:focus{
+  border-color: #fb923c;
+  box-shadow: 0 0 0 3px #fb923c44;
+  outline: none;
+}
+
 .contact-form-input1 {
   width: 98%;
   padding: 0.7rem 1rem;
@@ -203,15 +215,19 @@
 }
 
 .contact-form-input1:focus {
-  border-color: #2563eb;
+  border-color: #fb923c;
+  box-shadow: 0 0 0 3px #fb923c44;
   outline: none;
 }
 
 .contact-form-input:focus,
 .contact-form-textarea:focus {
-  border-color: #2563eb;
+  border-color: #fb923c;
+  box-shadow: 0 0 0 3px #fb923c44;
   outline: none;
 }
+
+
 
 /* Optional: visually group phone and school fields for clarity */
 .contact-form-phone,

@@ -14,10 +14,10 @@ const Index = () => {
   ];
 
   const quickStats = [
-    { icon: Users, label: "Students Impacted", value: "40,000+" },
+    { icon: Users, label: "Students Impacted", value: "300+" },
     { icon: Target, label: "Active Campaigns", value: "5" },
-    { icon: Heart, label: "Community Partners", value: "50+" },
-    { icon: Lightbulb, label: "Innovation Projects", value: "15+" }
+    { icon: Heart, label: "Community Partners", value: "2" },
+    { icon: Lightbulb, label: "Innovation Projects", value: "5" }
   ];
 
 
@@ -39,7 +39,7 @@ const Index = () => {
         <div className="index-hero-content">
           <div className="index-hero-badge-row">
             <div className="index-hero-badge">
-              <span>Makerere University Campaign 2024</span>
+              <span>Let's Build Back Better </span>
             </div>
           </div>
           
