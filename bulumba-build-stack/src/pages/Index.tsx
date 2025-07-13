@@ -59,7 +59,7 @@ const Index = () => {
           <div className="index-hero-buttons">
             <Button asChild size="lg" className="index-hero-join-btn">
               <Link to="/join">
-                Join Our Movement
+                Join Us
                 <ArrowRight className="index-hero-arrow" />
               </Link>
             </Button>
@@ -111,7 +111,7 @@ const Index = () => {
           <div className="index-featured-header">
             <h2 className="index-featured-title">Core Campaigns</h2>
             <p className="index-featured-description">
-              Discover our key initiatives designed to transform the Makerere experience
+              Discover our key initiatives designed to transform your Makerere experience
             </p>
           </div>
           

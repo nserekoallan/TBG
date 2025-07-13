@@ -15,7 +15,6 @@ const Header = () => {
     { name: 'Home', path: '/' },
     { name: 'Campaigns', path: '/campaigns' },
     { name: 'Vision', path: '/vision' },
-    { name: 'Join Us', path: '/join' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -57,7 +56,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="header-cta">
             <Button asChild className="header-cta-btn">
-              <Link to="/join">Join Movement</Link>
+              <Link to="/join">Join Us</Link>
             </Button>
           </div>
 

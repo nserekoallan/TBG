@@ -1,6 +1,5 @@
 import './CampaignsPage.css';
 import { Card, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Users, Coins, Lightbulb, Radio, Zap } from 'lucide-react';
 import Header from '../components/Header';
@@ -90,7 +89,7 @@ const CampaignsPage = () => {
           </h1>
           <p className="campaigns-hero-description">
             Discover the five transformative initiatives that form the backbone of our 
-            Build Back Better movement at Makerere University
+            Build Back Better plan at Makerere University
           </p>
         </div>
       </section>
