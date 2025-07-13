@@ -638,8 +638,10 @@
 /* CTA Section */
 .index-cta-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #7c3aed 100%);
+  background: #2a2929;
   color: #fff;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(13, 11, 11, 0.13);
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1.2s cubic-bezier(0.77, 0, 0.175, 1);

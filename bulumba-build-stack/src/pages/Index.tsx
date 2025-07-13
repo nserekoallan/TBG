@@ -138,9 +138,6 @@ const Index = () => {
                   <campaign.icon className="index-featured-icon" />
                   <h3 className="index-featured-campaign-title">{campaign.title}</h3>
                   <p className="index-featured-campaign-description">{campaign.description}</p>
-                  <Button variant="ghost" className="index-featured-learn-btn">
-                    Learn More →
-                  </Button>
                 </CardContent>
               </Card>
             ))}
