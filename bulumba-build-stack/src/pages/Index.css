@@ -74,6 +74,9 @@
     transform: translateY(0) scale(1);
   }
 }
+.bulumba {
+  color: white;
+}
 
 .index-hero-badge-row {
   margin-bottom: 2rem;
@@ -108,6 +111,7 @@
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
+  color: white;
   line-height: 1.1;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   letter-spacing: 1px;
@@ -178,7 +182,7 @@
 
 .index-hero-join-btn {
   background: linear-gradient(135deg, #fb3c3c 0%, #f5130b 100%);
-  color: #1a202c;
+  color: white;
   border-radius: 0.75rem;
   font-weight: 600;
   padding: 1rem 2rem;
@@ -700,7 +704,7 @@
 
 .index-cta-join-btn {
   background: linear-gradient(135deg, #fb3c3c 0%, #f50b0b 100%);
-  color: #1a202c;
+  color: white;
   border-radius: 0.75rem;
   font-weight: 600;
   padding: 1rem 2rem;

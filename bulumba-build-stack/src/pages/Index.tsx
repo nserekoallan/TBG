@@ -39,7 +39,7 @@ const Index = () => {
         <div className="index-hero-content">
           <div className="index-hero-badge-row">
             <div className="index-hero-badge">
-              <span>Let's Build Back Better </span>
+              <span className='bulumba'>Let's Build Back Better </span>
             </div>
           </div>
           
