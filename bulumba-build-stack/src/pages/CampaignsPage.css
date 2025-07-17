@@ -16,18 +16,47 @@
   background: #696969;
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaigns-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: heroGlassyFlash 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroGlassyFlash {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 1;
+  }
 }
 
 .campaigns-hero-title {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .campaigns-hero-description {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .campaigns-list-section {
@@ -40,7 +69,7 @@
   gap: 3rem;
 }
 
-/* --- Eye-catching Card and Button Effects --- */
+/* --- Enhanced Eye-catching Card and Button Effects with Glassy Flash --- */
 .campaign-card {
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
@@ -54,6 +83,23 @@
   color: black;
 }
 
+.campaign-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.campaign-card:hover::before {
+  left: 100%;
+}
+
 .campaign-card:hover {
   box-shadow: 0 12px 40px rgba(30, 58, 138, 0.18);
   transform: scale(1.03) translateY(-4px);
@@ -64,6 +110,8 @@
 .campaign-card-grid {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 900px) {
@@ -78,15 +126,24 @@
 .campaign-card-image-wrap {
   position: relative;
   flex: 1 1 350px;
-  min-width: 300px;
-  height: 250px;
+  min-width: 600px;
+  align-items: stretch;
+  border-radius: 15px;
+  display: flex;
+  height: 400px;
+  overflow: hidden;
 }
 
 .campaign-card-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fit;
   display: block;
+  transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.campaign-card:hover .campaign-card-image {
+  transform: scale(1.05);
 }
 
 .campaign-card-image-overlay {
@@ -94,31 +151,67 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.18);
   pointer-events: none;
+  transition: background 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.campaign-card:hover .campaign-card-image-overlay {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .campaign-card-status-badge {
   position: absolute;
   top: 1rem;
   left: 1rem;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-card-status-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: badgeGlassyFlash 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes badgeGlassyFlash {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 1;
+  }
 }
 
 .campaign-status-active {
-  background: #22c55e !important;
+  background: rgba(34, 197, 94, 0.9) !important;
   color: #fff !important;
 }
 
 .campaign-status-development {
-  background: #2563eb !important;
+  background: rgba(37, 99, 235, 0.9) !important;
   color: #fff !important;
 }
 
 .campaign-status-planning {
-  background: #facc15 !important;
+  background: rgba(250, 204, 21, 0.9) !important;
   color: #222 !important;
 }
 
 .campaign-status-default {
-  background: #64748b !important;
+  background: rgba(100, 116, 139, 0.9) !important;
   color: #000000 !important;
 }
 
@@ -128,6 +221,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card-content:hover {
@@ -145,6 +240,8 @@
   font-size: 2rem;
   margin-right: 1rem;
   transition: color 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card:hover .campaign-card-icon {
@@ -155,6 +252,8 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #222;
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card-description {
@@ -162,6 +261,8 @@
   font-size: 1.05rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card-description:hover {
@@ -170,6 +271,8 @@
 
 .campaign-card-features {
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card-features-title {
@@ -189,6 +292,31 @@
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.07);
   padding: 0.5rem;
   backdrop-filter: blur(6px);
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-card-features-list::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: featuresGlassyFlash 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes featuresGlassyFlash {
+  0%, 100% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    left: 100%;
+    opacity: 1;
+  }
 }
 
 .campaign-card-feature {
@@ -200,6 +328,8 @@
     color 0.3s cubic-bezier(0.77, 0, 0.175, 1);
   border-radius: 0.4rem;
   padding: 0.2rem 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .campaign-card-feature:hover {
@@ -211,6 +341,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 
 .campaign-card-impact {
@@ -234,6 +366,22 @@
   overflow: hidden;
 }
 
+.campaign-card-learn-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.campaign-card-learn-btn:hover::before {
+  left: 100%;
+}
+
 .campaign-card-learn-btn:hover {
   background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
   color: #fff;
@@ -245,18 +393,47 @@
   padding: 3rem 0;
   background: #f8fafc;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaigns-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.05), transparent);
+  animation: ctaGlassyFlash 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ctaGlassyFlash {
+  0%, 100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 1;
+  }
 }
 
 .campaigns-cta-title {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .campaigns-cta-description {
   font-size: 1.15rem;
   margin-bottom: 2rem;
   color: #334155;
+  position: relative;
+  z-index: 1;
 }
 
 .campaigns-cta-buttons {
@@ -265,6 +442,8 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 640px) {
@@ -286,6 +465,24 @@
     transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
   font-weight: 600;
   box-shadow: 0 2px 8px #2563eb22;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaigns-cta-involved-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.campaigns-cta-involved-btn:hover::before {
+  left: 100%;
 }
 
 .campaigns-cta-involved-btn:hover {
@@ -308,6 +505,24 @@
     transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
   font-weight: 600;
   box-shadow: 0 2px 8px #2563eb22;
+  position: relative;
+  overflow: hidden;
+}
+
+.campaigns-cta-share-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent);
+  transition: left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.campaigns-cta-share-btn:hover::before {
+  left: 100%;
 }
 
 .campaigns-cta-share-btn:hover {
@@ -317,7 +532,7 @@
   transform: scale(1.06) translateY(-2px);
 }
 
-/* --- Scroll Animations --- */
+/* --- Enhanced Scroll Animations with Glassy Effects --- */
 @media (prefers-reduced-motion: no-preference) {
   .scroll-animate {
     opacity: 0;
@@ -332,10 +547,68 @@
   }
 }
 
-/* Example usage:
-   Add 'scroll-animate' class to elements you want animated on scroll,
-   and toggle 'visible' class via JS or IntersectionObserver.
-*/
+/* --- Global Glassy Pulse Animation --- */
+.glassy-pulse {
+  animation: glassyPulse 3s ease-in-out infinite;
+}
+
+@keyframes glassyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(37, 99, 235, 0.05);
+  }
+}
+
+/* --- Shimmer Effect for Interactive Elements --- */
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* --- Enhanced Glass Morphism for Cards --- */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Floating Animation for Special Elements --- */
+.floating-animation {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
 /* --- Responsive Design Enhancements --- */
 @media (max-width: 768px) {
@@ -345,4 +618,54 @@
   .campaigns-cta-title {
     font-size: 1.5rem;
   }
+  
+  /* Reduce animation intensity on mobile */
+  .campaign-card::before,
+  .campaigns-cta::before,
+  .campaigns-hero::before {
+    animation-duration: 8s;
+  }
+}
+
+/* --- Utility Classes for Glassy Effects --- */
+.glass-flash-blue {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-flash-blue::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.glass-flash-blue:hover::before {
+  left: 100%;
+}
+
+.glass-flash-orange {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-flash-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.3), transparent);
+  transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.glass-flash-orange:hover::before {
+  left: 100%;
 }

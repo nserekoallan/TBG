@@ -146,7 +146,7 @@ const VisionPage = () => {
           <div className="vision-cta-buttons">
             <Button asChild size="lg" className="vision-cta-join-btn">
               <Link to="/join">
-                Join Our Movement
+                Join Us
                 <ArrowRight className="vision-cta-arrow" />
               </Link>
             </Button>

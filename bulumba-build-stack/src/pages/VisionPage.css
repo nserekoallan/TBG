@@ -7,6 +7,85 @@
   overflow-x: hidden;
 }
 
+/* Glassy Flash Animation Keyframes */
+@keyframes glassyFlash {
+  0% {
+    transform: translateX(-100%) rotate(20deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glassyPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes glassyShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Glassy Flash Effect Utility Class */
+.glassy-flash-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glassy-flash-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.6) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.6) 60%,
+    rgba(255, 255, 255, 0.1) 80%,
+    transparent 100%
+  );
+  transform: translateX(-100%) rotate(20deg);
+  animation: glassyFlash 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glassy-flash-effect:hover::before {
+  animation: glassyFlash 1.5s ease-in-out infinite;
+}
+
+/* Glassy Shimmer Effect */
+.glassy-shimmer {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: glassyShimmer 2s linear infinite;
+}
+
 /* Hero Section */
 .vision-hero-section {
   padding: 4rem 0 2rem 0;
@@ -50,7 +129,25 @@
   font-size: 1rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 20px rgba(251, 146, 60, 0.2);
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite, glassyPulse 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-hero-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: glassyFlash 4s ease-in-out infinite;
 }
 
 @keyframes pulse {
@@ -87,6 +184,23 @@
   display: inline-block;
   margin-left: 0.5rem;
   animation: gradientShift 3s ease-in-out infinite;
+  position: relative;
+}
+
+.vision-hero-title-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: glassyShimmer 3s linear infinite;
 }
 
 @keyframes gradientShift {
@@ -120,6 +234,25 @@
   box-shadow: 0 8px 32px rgba(37, 99, 235, 0.13);
   backdrop-filter: blur(12px);
   transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: glassyFlash 5s ease-in-out infinite;
+  z-index: 1;
 }
 
 .vision-mission-card:hover {
@@ -127,8 +260,14 @@
   transform: scale(1.03) translateY(-4px);
 }
 
+.vision-mission-card:hover::before {
+  animation: glassyFlash 2s ease-in-out infinite;
+}
+
 .vision-mission-card-content {
   padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .vision-mission-header {
@@ -228,11 +367,32 @@
   overflow: hidden;
 }
 
+.vision-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: glassyFlash 6s ease-in-out infinite;
+  z-index: 1;
+}
+
 .vision-pillar-card:hover {
   box-shadow: 0 16px 48px rgba(251,146,60,0.22);
   transform: scale(1.04) translateY(-4px);
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   color: #222;
+}
+
+.vision-pillar-card:hover::before {
+  animation: glassyFlash 1.5s ease-in-out infinite;
 }
 
 .vision-pillar-icon-bg {
@@ -246,6 +406,9 @@
   margin: 0 auto 1rem auto;
   box-shadow: 0 2px 8px rgba(37,99,235,0.07);
   transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  z-index: 2;
+  animation: glassyPulse 4s ease-in-out infinite;
 }
 
 .vision-pillar-card:hover .vision-pillar-icon-bg {
@@ -266,11 +429,15 @@
   font-size: 1.15rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .vision-pillar-description {
   color: #334155;
   font-size: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 /* Detailed Vision */
@@ -332,11 +499,34 @@
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(30, 58, 138, 0.07);
   transition: box-shadow 0.3s cubic-bezier(.77,0,.175,1), transform 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-detail-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: glassyFlash 7s ease-in-out infinite;
+  z-index: 1;
 }
 
 .vision-detail-img:hover {
   box-shadow: 0 8px 32px rgba(251,146,60,0.22);
   transform: scale(1.04) translateY(-4px);
+}
+
+.vision-detail-img:hover::before {
+  animation: glassyFlash 2s ease-in-out infinite;
 }
 
 .vision-detail-subtitle {
@@ -434,11 +624,32 @@
   overflow: hidden;
 }
 
+.vision-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: glassyFlash 8s ease-in-out infinite;
+  z-index: 1;
+}
+
 .vision-stat-card:hover {
   box-shadow: 0 16px 48px rgba(251,146,60,0.22);
   transform: scale(1.04) translateY(-4px);
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
   color: #222;
+}
+
+.vision-stat-card:hover::before {
+  animation: glassyFlash 1.5s ease-in-out infinite;
 }
 
 .vision-stat-number {
@@ -447,6 +658,8 @@
   color: #fb923c;
   margin-bottom: 0.5rem;
   transition: color 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  z-index: 2;
 }
 
 .vision-stat-card:hover .vision-stat-number {
@@ -458,21 +671,42 @@
   font-weight: 500;
   color: #2563eb;
   margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 2;
 }
 
 .vision-stat-description {
   color: #334155;
   font-size: 0.98rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* CTA Section */
+
 .vision-cta-section {
   padding: 3rem 0;
-  background: linear-gradient(90deg, #2563eb 60%, #1e3a8a 100%);
+  background: #696969;
   color: #fff;
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1.2s cubic-bezier(.77,0,.175,1);
+}
+
+.vision-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: glassyFlash 10s ease-in-out infinite;
+  z-index: 1;
 }
 
 .vision-cta-container {
@@ -480,7 +714,7 @@
   max-width: 700px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .vision-cta-title {
@@ -531,6 +765,24 @@
   backdrop-filter: blur(10px);
 }
 
+.vision-cta-join-btn::before,
+.vision-cta-campaigns-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: glassyFlash 4s ease-in-out infinite;
+  z-index: 1;
+}
+
 .vision-cta-join-btn {
   background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%);
   color: #222;
@@ -550,10 +802,17 @@
   transform: scale(1.06) translateY(-3px) rotate(-1deg);
 }
 
+.vision-cta-join-btn:hover::before,
+.vision-cta-campaigns-btn:hover::before {
+  animation: glassyFlash 1s ease-in-out infinite;
+}
+
 .vision-cta-arrow {
   margin-left: 0.5rem;
   vertical-align: middle;
   transition: transform 0.3s cubic-bezier(.77,0,.175,1);
+  position: relative;
+  z-index: 2;
 }
 
 .vision-cta-join-btn:hover .vision-cta-arrow,
@@ -577,10 +836,55 @@
   }
 }
 
-/* Example usage:
-   Add 'scroll-animate' class to elements you want animated on scroll,
-   and toggle 'visible' class via JS or IntersectionObserver.
-*/
+/* Glassy Flash Delay Variants */
+.glassy-flash-delay-1::before {
+  animation-delay: 0.5s;
+}
+
+.glassy-flash-delay-2::before {
+  animation-delay: 1s;
+}
+
+.glassy-flash-delay-3::before {
+  animation-delay: 1.5s;
+}
+
+.glassy-flash-delay-4::before {
+  animation-delay: 2s;
+}
+
+/* Enhanced Glassy Effects for Interactive Elements */
+.vision-pillar-card:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+.vision-pillar-card:nth-child(2)::before {
+  animation-delay: 1.5s;
+}
+
+.vision-pillar-card:nth-child(3)::before {
+  animation-delay: 3s;
+}
+
+.vision-pillar-card:nth-child(4)::before {
+  animation-delay: 4.5s;
+}
+
+.vision-stat-card:nth-child(1)::before {
+  animation-delay: 0s;
+}
+
+.vision-stat-card:nth-child(2)::before {
+  animation-delay: 2s;
+}
+
+.vision-stat-card:nth-child(3)::before {
+  animation-delay: 4s;
+}
+
+.vision-stat-card:nth-child(4)::before {
+  animation-delay: 6s;
+}
 
 /* Responsive Design Enhancements */
 @media (max-width: 768px) {

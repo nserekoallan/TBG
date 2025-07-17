@@ -4,6 +4,11 @@ import { Badge } from '../components/ui/badge';
 import { Users, Coins, Lightbulb, Radio, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import scholars5 from '../assets/images/scholars5.jpg';
+import scholars2 from '../assets/images/scholars7.jpg';
+import scholars3 from '../assets/images/scholars3.jpg';
+import scholars4 from '../assets/images/scholars4.jpg';
+import scholars6 from '../assets/images/scholars6.jpg';
 
 const CampaignsPage = () => {
   const campaigns = [
@@ -12,7 +17,7 @@ const CampaignsPage = () => {
       title: "GUILD SCHOLARS FUND",
       description: "This fund is dedicated to providing financial assistance to deserving students at Makerere university. By alleviating financial burdens, through providing half tuition scholarships at most 50% tuition fee coverage for financially disadvantaged students. This could be done through Crowd sourcing and digital fundraising, corporate partnerships, grant applications and event-based fundraising to save a Makererenean.",
       icon: Users,
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: scholars2,
       status: "Active",
       
       features: [
@@ -23,7 +28,7 @@ const CampaignsPage = () => {
       title: "CAMPUS COIN",
       description: "Establishing a student SACCO at Makerere University with a focus on fixed accounts accessibility only after graduation with an annual interest rate. This will promote financial discipline and prepare students for post-campus life.",
       icon: Coins,
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: scholars5,
       status: "In Development",
       features: [
         "1. Pursuing further studies",
@@ -39,7 +44,7 @@ const CampaignsPage = () => {
       title: "GUILD MUSEUM",
       description: "We will establish a dedicated Guild museum to preserve and showcase the rich history, achievements and contributions of the Makerere University Students Guild. Celebrating its legacy for future generations. Lighting up leisure parks within Makerere university to enhance safety and aesthetics during night hours.",
       icon: Lightbulb,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: scholars4,
       status: "Planning Phase",
       impact: "",
       features: []
@@ -49,7 +54,7 @@ const CampaignsPage = () => {
       title: "SCHOOL-BASED INNOVATION SHOWROOMS AROUND THE UNIVERSITY PERIMETER WALL.",
       description: "We envision transforming the perimeter wall into a dynamic space for innovation showrooms by establishing strategically located innovation showrooms. This can be done through the Makerere university innovation hub. This can easily transform Makerere into the \"SILICON VALLEY\" of East Africa. This provides students with modern workspaces, resources and mentorship to develop ground breaking ideas, fastening entrepreneurship and technological advancement within the university and surrounding community.",
       icon: Radio,
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: scholars6,
       status: "Active",
       features: []
     },
@@ -58,7 +63,7 @@ const CampaignsPage = () => {
       title: "DIGITALIZATION, VOICE OF MAKERERE RADIO & TV",
       description: "This focuses on fully digitalizing university operations i.e. Guild Sittings , students voices, health campaigns etc.. by upgrading our digital infrastructure and media platforms. We aim to enhance communication, improve access to information and provide students with cutting edge learning and broadcasting opportunities.",
       icon: Zap,
-      image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: scholars3,
       status: "Active",
       features: []
     }
@@ -133,7 +138,8 @@ const CampaignsPage = () => {
                       <ul className="campaign-card-features-list">
                         {campaign.features.map((feature, idx) => (
                           <li key={idx} className="campaign-card-feature">
-                            <span className="campaign-card-feature-dot"></span>
+                            <span className="campaign-card-feature-dot">
+                            </span>
                             {feature}
                           </li>
                         ))}

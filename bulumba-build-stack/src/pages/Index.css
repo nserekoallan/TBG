@@ -81,7 +81,7 @@
 
 .index-hero-badge {
   display: inline-block;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #f6322f 0%, #f51f0b 100%);
   color: #1a202c;
   font-weight: 600;
   border-radius: 2rem;
@@ -130,11 +130,7 @@
 }
 
 .index-hero-title-gradient {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fb923c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
+  color: red;  
   animation: gradientShift 3s ease-in-out infinite;
 }
 
@@ -181,7 +177,7 @@
 }
 
 .index-hero-join-btn {
-  background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #fb3c3c 0%, #f5130b 100%);
   color: #1a202c;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -215,7 +211,7 @@
 
 .index-hero-join-btn:hover {
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 8px 30px rgba(251, 146, 60, 0.6);
+  box-shadow: 0 8px 30px rgba(251, 66, 60, 0.6);
 }
 
 .index-hero-explore-btn {
@@ -421,7 +417,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #fb923c, #f59e0b);
+  background: linear-gradient(90deg, #fb923c, #f50b0b);
   transform: scaleX(0);
   transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 }
@@ -436,7 +432,7 @@
 }
 
 .index-stat-icon {
-  color: #fbbf24;
+  color: red;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
@@ -462,7 +458,7 @@
 .index-stat-value {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #fb923c;
+  color: red;
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
   animation: fadeInUp 1.2s 0.2s cubic-bezier(0.77, 0, 0.175, 1) backwards;
@@ -703,7 +699,7 @@
 }
 
 .index-cta-join-btn {
-  background: linear-gradient(135deg, #fb923c 0%, #f59e0b 100%);
+  background: linear-gradient(135deg, #fb3c3c 0%, #f50b0b 100%);
   color: #1a202c;
   border-radius: 0.75rem;
   font-weight: 600;
@@ -828,7 +824,7 @@ html {
 
 .index-hero-join-btn:hover,
 .index-cta-join-btn:hover {
-  background: linear-gradient(135deg, #f59e0b 0%, #fb923c 100%);
+  background: linear-gradient(135deg, #bc2c19 0%, #b71715 100%);
   color: #fff;
   box-shadow: 0 12px 40px 0 #fb923c88;
   transform: scale(1.06) translateY(-3px) rotate(-1deg);

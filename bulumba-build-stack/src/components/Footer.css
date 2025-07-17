@@ -58,13 +58,13 @@
 .footer-logo-title {
   font-size: 1.15rem;
   font-weight: bold;
-  color: #fb923c;
+  color: red;
   display: block;
 }
 
 .footer-logo-subtitle {
   font-size: 0.85rem;
-  color: #fb923c;
+  color: red;
   display: block;
 }
 
@@ -81,7 +81,7 @@
   font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #fb923c;
+  color: red;
 }
 
 .footer-links-list,
@@ -122,7 +122,7 @@
 }
 
 .footer-contact-icon {
-  color: #fb923c;
+  color: red;
   font-size: 1.2rem;
 }
 
@@ -155,7 +155,7 @@
   height: 38px;
   border-radius: 50%;
   background: #e0e7ff;
-  color: #fb923c;
+  color: red;
   transition: background 0.2s, color 0.2s;
   text-decoration: none;
 }

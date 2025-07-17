@@ -31,7 +31,7 @@ const Index = () => {
         <div 
           className="index-hero-bg"
           style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://mkeqcoiwszenuwxntjrh.supabase.co/storage/v1/object/public/tourismimages//B1.jpg')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.0)), url('https://mkeqcoiwszenuwxntjrh.supabase.co/storage/v1/object/public/tourismimages//WhatsApp%20Image%202025-07-12%20at%2017.08.41_65e51e77.jpg')`
           }}
         />
         
@@ -73,6 +73,19 @@ const Index = () => {
       {/* Campaign Slogans */}
       <section className="index-slogans-section">
         <div className="index-container">
+          <div className="index-slogans-header">
+            <h2 className="index-slogans-title">About The Campaign</h2>
+            <div className="index-slogans-divider"></div>
+            <p className="index-featured-description">
+              Bulumba's Build Back Better plan is a transformative initiative
+              dedicated to empowering Makerere university students for a
+              brighter future. Our goal is to foster innovation, support student
+              success and preserve the rich history of this esteemed
+              institution, ensuring it remains a beacon of Excel in Africa and
+              beyond. We believe in collective action to build a stronger, more
+              vibrant university community for generations to come.
+            </p>
+          </div>
           <div className="index-slogans-header">
             <h2 className="index-slogans-title">Our Mission</h2>
             <div className="index-slogans-divider"></div>
