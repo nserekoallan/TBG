@@ -48,16 +48,25 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Simulate API submission (replace with actual endpoint)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       toast({
         title: "Message Sent Successfully!",
-        description:
-          "Thank you for contacting us. We'll respond within 24 hours.",
+        description: "Thank you for contacting us. We'll respond to your message within 24 hours.",
       });
+      
       setFormData({ name: "", email: "", subject: "", message: "" });
+      
+    } catch (error) {
+      toast({
+        title: "Failed to Send Message",
+        description: "There was an error sending your message. Please try again or contact us directly.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -74,7 +83,7 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+256 7037434", "+256 776133293"],
+      details: ["+256 703 743 491", "+256 776 133 293"],
     },
   ];
 

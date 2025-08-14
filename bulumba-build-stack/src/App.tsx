@@ -12,6 +12,9 @@ import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import Volunteer from "./pages/Volunteer";
 import Partner from "./pages/Partner";
+import VotePage from "./pages/VotePage";
+import EventsPage from "./pages/EventsPage";
+import ResourcesPage from "./pages/ResourcesPage";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/about" element={<AboutPage />} />
           <Route path="/volunteer" element={<Volunteer />} />
           <Route path="/partner" element={<Partner />} />
+          <Route path="/vote" element={<VotePage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

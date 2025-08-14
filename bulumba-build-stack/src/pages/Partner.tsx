@@ -9,12 +9,8 @@ import {
 } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import {
-  Mail,
-  Phone,
-  MapPin,
   Send,
   Facebook,
   Linkedin,
@@ -48,12 +44,25 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Submit to Timothy's WhatsApp
+    const message = `Hi Timothy! I'm interested in becoming a partner with Bulumba Build Back Better!
+
+Name: ${formData.name}
+Email: ${formData.email}
+Company/Institution: ${formData.college}
+Phone: ${formData.phone}
+
+I would like to explore partnership opportunities and discuss how we can collaborate to transform Makerere University together! 🤝
+
+Looking forward to hearing from you!`;
+
+    const whatsappUrl = `https://wa.me/256703743491?text=${encodeURIComponent(message)}`;
+    
     setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
       toast({
-        title: "Message Sent Successfully!",
-        description:
-          "Thank you for contacting us. We'll respond within 24 hours.",
+        title: "Redirecting to WhatsApp!",
+        description: "Your partnership inquiry has been prepared for Timothy. Complete sending via WhatsApp.",
       });
       setFormData({ name: "", email: "", college: "", phone: "" });
       setIsSubmitting(false);

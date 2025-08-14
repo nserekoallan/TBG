@@ -1,7 +1,6 @@
 import "./JoinUsPage.css";
 import { Label } from "../components/ui/label";
 import {
-  Heart,
   Users,
   Handshake,
   Share2,
@@ -51,15 +50,35 @@ const JoinUsPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Simulate API submission (replace with actual endpoint)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your interest. We'll get back to you soon.",
+        title: "Application Submitted Successfully!",
+        description: "Thank you for joining the Bulumba Build Back Better movement. We'll contact you within 48 hours.",
       });
+      
       setFormData({ name: "", email: "", message: "", phone: "", college: "" });
+      
+      // Optional: Still provide WhatsApp contact for immediate questions
+      const hasUrgentQuestions = window.confirm(
+        "Your application has been submitted! Would you like to contact Timothy directly for urgent questions?"
+      );
+      
+      if (hasUrgentQuestions) {
+        const whatsappUrl = `https://wa.me/256703743491?text=Hi Timothy! I just submitted my application to join the movement. I have some urgent questions.`;
+        window.open(whatsappUrl, '_blank');
+      }
+      
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const waysToBrinBenefiHelp = [
