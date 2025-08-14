@@ -143,7 +143,8 @@ export const ImageCarousel = ({
               <img
                 src={images[currentIndex].src}
                 alt={images[currentIndex].alt}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 25%' }}
                 draggable={false}
               />
             )}

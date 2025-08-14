@@ -21,6 +21,9 @@ import {
   X
 } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
+import { HelmetProvider } from 'react-helmet-async';
+import { SocialMeta } from '../components/SocialMeta';
+import { ShareButton } from '../components/ShareButton';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -49,22 +52,35 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API submission (replace with actual endpoint)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Format message for WhatsApp
+      const whatsappMessage = encodeURIComponent(
+        `*New Contact Form Submission*\n\n` +
+        `*Name:* ${formData.name}\n` +
+        `*Email:* ${formData.email}\n` +
+        `*Subject:* ${formData.subject}\n\n` +
+        `*Message:*\n${formData.message}\n\n` +
+        `_Sent from Bulumba Build Back Better website_`
+      );
+      
+      // Open WhatsApp with the message
+      window.open(`https://wa.me/256703743491?text=${whatsappMessage}`, '_blank');
       
       toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for contacting us. We'll respond to your message within 24 hours.",
+        title: "Redirecting to WhatsApp!",
+        description: "Please send the message in WhatsApp to complete your submission.",
       });
       
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      // Clear form after a delay
+      setTimeout(() => {
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setIsSubmitting(false);
+      }, 2000);
       
     } catch (error) {
       toast({
-        title: "Failed to Send Message",
-        description: "There was an error sending your message. Please try again or contact us directly.",
+        title: "Failed to Open WhatsApp",
+        description: "Please contact us directly at +256 703 743 491.",
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -88,17 +104,35 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="contact-root">
-      <Header />
+    <HelmetProvider>
+      <div className="contact-root">
+        <SocialMeta 
+          title="Contact Timothy Bulumba - Build Back Better"
+          description="Get in touch with Timothy Bulumba and the Build Back Better campaign team. We're here to listen and help transform Makerere University."
+          url="https://bulumba.ug/contact"
+        />
+        <Header />
 
       {/* Hero Section */}
-      <section className="contact-hero">
+      <section className="contact-hero pt-20">
         <div className="contact-hero-container">
           <h1 className="contact-hero-title">Contact Us</h1>
           <p className="contact-hero-description">
             Have questions about our campaigns or want to get involved? We're
             here to help and would love to hear from you.
           </p>
+          <div className="mt-4">
+            <ShareButton
+              config={{
+                title: "Contact Timothy Bulumba",
+                description: "Get in touch with the Build Back Better campaign. Let's transform Makerere University together!",
+                hashtags: ['ContactBulumba', 'MakerereSupport', 'StudentVoice']
+              }}
+              variant="text"
+              buttonText="Share Contact Info"
+              className="text-white hover:text-blue-200"
+            />
+          </div>
         </div>
       </section>
 
@@ -297,7 +331,8 @@ const ContactPage = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </HelmetProvider>
   );
 };
 

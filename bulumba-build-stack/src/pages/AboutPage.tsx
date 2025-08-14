@@ -3,17 +3,26 @@ import { Button } from "../components/ui/button";
 import { Target, Users, ArrowRight, Star, Rocket, Lightbulb, MessageCircle, GraduationCap, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { HelmetProvider } from 'react-helmet-async';
+import { SocialMeta } from '../components/SocialMeta';
+import { ShareButton } from '../components/ShareButton';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { HERO_IMAGES } from '../data/images';
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <Header />
+    <HelmetProvider>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <SocialMeta 
+          title="About Timothy Bulumba - Build Back Better"
+          description="Learn about Timothy Bulumba's vision and mission to transform Makerere University through innovation, technology, and student empowerment."
+          url="https://bulumba.ug/about"
+        />
+        <Header />
       
       {/* About Header */}
-      <section className="relative py-20 bg-white">
+      <section className="relative py-20 bg-white pt-24">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div 
             className="text-center space-y-6 max-w-4xl mx-auto"
@@ -39,6 +48,18 @@ const AboutPage = () => {
               Learn about Timothy Bulumba's journey and the mission behind 
               Bulumba Build Back Better at Makerere University.
             </p>
+            
+            <div className="mt-6">
+              <ShareButton
+                config={{
+                  title: "About Timothy Bulumba - Makerere Guild President Candidate",
+                  description: "Learn about the visionary leader behind the Build Back Better movement at Makerere University.",
+                  hashtags: ['BulumbaBuildBack', 'TimothyBulumba', 'MakerereLeadership']
+                }}
+                variant="text"
+                buttonText="Share Timothy's Story"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -376,7 +397,8 @@ const AboutPage = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </HelmetProvider>
   );
 };
 

@@ -44,16 +44,30 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Format message for WhatsApp
+    const whatsappMessage = encodeURIComponent(
+      `*🙋 New Volunteer Application*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*College:* ${formData.college}\n\n` +
+      `I would like to volunteer for the Build Back Better campaign!\n\n` +
+      `_Sent from the volunteer registration page_`
+    );
+    
+    // Open WhatsApp with the message
+    window.open(`https://wa.me/256703743491?text=${whatsappMessage}`, '_blank');
+    
+    toast({
+      title: "Redirecting to WhatsApp!",
+      description: "Please send the message in WhatsApp to complete your volunteer registration.",
+    });
+    
+    // Clear form after a delay
     setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully!",
-        description:
-          "Thank you for contacting us. We'll respond within 24 hours.",
-      });
       setFormData({ name: "", email: "", college: "", phone: "" });
       setIsSubmitting(false);
-    }, 1000);
+    }, 2000);
   };
 
  
