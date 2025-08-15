@@ -16,7 +16,8 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            // Bundle React and related core libraries together
+            if (id.includes('react') && !id.includes('lucide-react')) {
               return 'react-vendor';
             }
             if (id.includes('framer-motion')) {
@@ -28,8 +29,8 @@ export default defineConfig({
             if (id.includes('lucide-react')) {
               return 'icons-vendor';
             }
-            if (id.includes('react-helmet') || id.includes('react-error-boundary')) {
-              return 'utils-vendor';
+            if (id.includes('@tanstack/react-query')) {
+              return 'react-vendor'; // Include with React vendor
             }
             return 'vendor';
           }
@@ -50,7 +51,10 @@ export default defineConfig({
       'react-router-dom', 
       'framer-motion', 
       'recharts',
-      'es-toolkit/compat'
+      'es-toolkit/compat',
+      '@tanstack/react-query',
+      'react-helmet-async',
+      'react-error-boundary'
     ],
     exclude: [],
     esbuildOptions: {
