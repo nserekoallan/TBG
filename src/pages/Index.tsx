@@ -11,16 +11,17 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Hero images
+  // Hero images - use relative paths for GitHub Pages deployment
+  const baseUrl = import.meta.env.BASE_URL || '/';
   const heroImages = [
-    { src: '/timothy-1.jpg', alt: 'Timothy Bulumba - Leader', caption: '🚀 Transforming Makerere' },
-    { src: '/timothy-2.jpg', alt: 'Timothy Bulumba - Visionary', caption: '💡 Innovation First' },
-    { src: '/timothy-3.jpg', alt: 'Timothy Bulumba - Champion', caption: '🏆 Students First' },
-    { src: '/timothy-4.jpg', alt: 'Timothy Bulumba - Builder', caption: '🌟 Building Excellence' },
-    { src: '/timothy-5.jpg', alt: 'Timothy Bulumba - Innovator', caption: '⚡ Digital Revolution' },
-    { src: '/timothy-6.jpg', alt: 'Timothy Bulumba - Unite', caption: '🤝 Unity in Diversity' },
-    { src: '/timothy-7.jpg', alt: 'Timothy Bulumba - Future', caption: '🎯 Future Forward' },
-    { src: '/timothy-8.jpg', alt: 'Timothy Bulumba - Success', caption: '✨ Your Success, Our Mission' }
+    { src: `${baseUrl}timothy-1.jpg`, alt: 'Timothy Bulumba - Leader', caption: '🚀 Transforming Makerere' },
+    { src: `${baseUrl}timothy-2.jpg`, alt: 'Timothy Bulumba - Visionary', caption: '💡 Innovation First' },
+    { src: `${baseUrl}timothy-3.jpg`, alt: 'Timothy Bulumba - Champion', caption: '🏆 Students First' },
+    { src: `${baseUrl}timothy-4.jpg`, alt: 'Timothy Bulumba - Builder', caption: '🌟 Building Excellence' },
+    { src: `${baseUrl}timothy-5.jpg`, alt: 'Timothy Bulumba - Innovator', caption: '⚡ Digital Revolution' },
+    { src: `${baseUrl}timothy-6.jpg`, alt: 'Timothy Bulumba - Unite', caption: '🤝 Unity in Diversity' },
+    { src: `${baseUrl}timothy-7.jpg`, alt: 'Timothy Bulumba - Future', caption: '🎯 Future Forward' },
+    { src: `${baseUrl}timothy-8.jpg`, alt: 'Timothy Bulumba - Success', caption: '✨ Your Success, Our Mission' }
   ];
 
   useEffect(() => {

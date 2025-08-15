@@ -16,15 +16,17 @@ interface HeroProps {
   onWhatsApp: () => void;
 }
 
+// Use dynamic base URL for GitHub Pages deployment
+const baseUrl = import.meta.env.BASE_URL || '/';
 const heroImages: HeroImage[] = [
-  { src: '/timothy-1.jpg', alt: 'Timothy Bulumba - Leader', caption: 'Transforming Makerere' },
-  { src: '/timothy-2.jpg', alt: 'Timothy Bulumba - Visionary', caption: 'Innovation First' },
-  { src: '/timothy-3.jpg', alt: 'Timothy Bulumba - Champion', caption: 'Students First' },
-  { src: '/timothy-4.jpg', alt: 'Timothy Bulumba - Builder', caption: 'Building Excellence' },
-  { src: '/timothy-5.jpg', alt: 'Timothy Bulumba - Innovator', caption: 'Digital Revolution' },
-  { src: '/timothy-6.jpg', alt: 'Timothy Bulumba - Unite', caption: 'Unity in Diversity' },
-  { src: '/timothy-7.jpg', alt: 'Timothy Bulumba - Future', caption: 'Future Forward' },
-  { src: '/timothy-8.jpg', alt: 'Timothy Bulumba - Success', caption: 'Your Success, Our Mission' }
+  { src: `${baseUrl}timothy-1.jpg`, alt: 'Timothy Bulumba - Leader', caption: 'Transforming Makerere' },
+  { src: `${baseUrl}timothy-2.jpg`, alt: 'Timothy Bulumba - Visionary', caption: 'Innovation First' },
+  { src: `${baseUrl}timothy-3.jpg`, alt: 'Timothy Bulumba - Champion', caption: 'Students First' },
+  { src: `${baseUrl}timothy-4.jpg`, alt: 'Timothy Bulumba - Builder', caption: 'Building Excellence' },
+  { src: `${baseUrl}timothy-5.jpg`, alt: 'Timothy Bulumba - Innovator', caption: 'Digital Revolution' },
+  { src: `${baseUrl}timothy-6.jpg`, alt: 'Timothy Bulumba - Unite', caption: 'Unity in Diversity' },
+  { src: `${baseUrl}timothy-7.jpg`, alt: 'Timothy Bulumba - Future', caption: 'Future Forward' },
+  { src: `${baseUrl}timothy-8.jpg`, alt: 'Timothy Bulumba - Success', caption: 'Your Success, Our Mission' }
 ];
 
 const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
@@ -79,7 +81,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
     
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 4000);
+    }, 6000); // Increased for smoother experience
     
     return () => clearInterval(interval);
   }, [imagesLoaded, heroImages.length]);
@@ -111,31 +113,22 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
         }} />
       </div>
       
-      {/* Animated orbs - reduced for performance */}
+      {/* Static gradient orbs for better performance */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         {[0, 1, 2].map((i) => (
-          <motion.div
+          <div
             key={i}
             className="absolute w-64 h-64 rounded-full opacity-10"
             style={{
-              background: `radial-gradient(circle, var(--color-primary-${400 + i * 100}) 0%, transparent 70%)`,
+              background: `radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%)`,
               left: `${30 * i}%`,
               top: `${20 * i}%`,
-            }}
-            animate={{
-              x: [0, 50, 0],
-              y: [0, -50, 0],
-            }}
-            transition={{
-              duration: 20 + i * 5,
-              repeat: Infinity,
-              ease: "linear"
             }}
           />
         ))}
       </div>
 
-      <div className="container relative pt-16">
+      <div className="container relative pt-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           
           {/* Left Content */}
@@ -246,7 +239,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
 
           {/* Right - Image Carousel */}
           <motion.div
-            className="relative z-[250]"
+            className="relative z-20"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -261,17 +254,23 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
                   {!imagesLoaded ? (
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-200 to-blue-200 animate-pulse" />
                   ) : (
-                    <img 
-                      src={heroImages[currentImageIndex].src}
-                      alt={heroImages[currentImageIndex].alt}
-                      className="w-full h-full object-cover"
-                      style={{ 
-                        objectPosition: 'center 30%',
-                        transform: 'scale(1.1)'
-                      }}
-                      loading="eager"
-                      decoding="async"
-                    />
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentImageIndex}
+                        src={heroImages[currentImageIndex].src}
+                        alt={heroImages[currentImageIndex].alt}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ 
+                          objectPosition: 'center 30%',
+                        }}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1.05 }}
+                        exit={{ opacity: 0, scale: 1 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </AnimatePresence>
                   )}
                   
                   {/* Caption */}
