@@ -115,7 +115,7 @@ export const AdminPollDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-orange-600 font-medium">Engagement</p>
-              <p className="text-2xl font-bold text-gray-900">{analytics.engagementRate}%</p>
+              <p className="text-2xl font-bold text-gray-900">{analytics.engagementRate.toFixed(2)}%</p>
             </div>
             <TrendingUp className="w-8 h-8 text-orange-600" />
           </div>

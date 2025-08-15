@@ -267,13 +267,13 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                     <p className="text-xs text-gray-600 mb-2 font-semibold">Available Links:</p>
                     <div className="space-y-1">
                       <p className="text-xs text-gray-500">
-                        <span className="font-medium">Short:</span> <span className="font-mono text-purple-600">vote.bulumba.ug/p/A7B3XYZ</span>
+                        <span className="font-medium">Short:</span> <span className="font-mono text-purple-600">timothybulumba.com/p/A7B3XYZ</span>
                       </p>
                       <p className="text-xs text-gray-500">
-                        <span className="font-medium">QR-friendly:</span> <span className="font-mono text-purple-600">bulumba.ug/A7B3XYZ</span>
+                        <span className="font-medium">QR-friendly:</span> <span className="font-mono text-purple-600">timothybulumba.com/A7B3XYZ</span>
                       </p>
                       <p className="text-xs text-gray-500">
-                        <span className="font-medium">Branded:</span> <span className="font-mono text-purple-600">bulumba.ug/campus-priority-1</span>
+                        <span className="font-medium">Branded:</span> <span className="font-mono text-purple-600">timothybulumba.com/campus-priority-1</span>
                       </p>
                     </div>
                   </div>

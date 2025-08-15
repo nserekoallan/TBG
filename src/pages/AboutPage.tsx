@@ -17,7 +17,7 @@ const AboutPage = () => {
         <SocialMeta 
           title="About Timothy Bulumba - Build Back Better"
           description="Learn about Timothy Bulumba's vision and mission to transform Makerere University through innovation, technology, and student empowerment."
-          url="https://bulumba.ug/about"
+          url="https://www.timothybulumba.com/about"
         />
         <Header />
       

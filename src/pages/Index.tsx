@@ -97,7 +97,7 @@ const Index = () => {
       <Header />
       
       {/* HERO SECTION - ABSOLUTELY STUNNING */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pb-24">
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20" />
@@ -606,7 +606,9 @@ const Index = () => {
         )}
       </AnimatePresence>
 
-      <Footer />
+      <div className="pt-12">
+        <Footer />
+      </div>
       
       <style>{`
         .text-gradient {

@@ -186,7 +186,7 @@ export const PollCard = ({ poll }: PollCardProps) => {
                     animate={{ opacity: 1 }}
                     className="text-sm font-bold text-gray-700"
                   >
-                    {option.percentage}%
+                    {option.percentage.toFixed(2)}%
                   </motion.span>
                 </div>
               </div>

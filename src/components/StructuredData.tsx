@@ -14,8 +14,8 @@ export const StructuredData = ({ type = 'Organization', data }: StructuredDataPr
           "@type": "Organization",
           "name": "Bulumba Build Back Better",
           "alternateName": "Timothy Bulumba Campaign",
-          "url": "https://bulumba.ug",
-          "logo": "https://bulumba.ug/logo.jpg",
+          "url": "https://www.timothybulumba.com",
+          "logo": "https://www.timothybulumba.com/logo.jpg",
           "description": "Timothy Bulumba's Build Back Better campaign for Makerere University Guild President 2025",
           "founder": {
             "@type": "Person",
@@ -46,8 +46,8 @@ export const StructuredData = ({ type = 'Organization', data }: StructuredDataPr
           "name": "Timothy Bulumba",
           "alternateName": "Build Back Better",
           "description": "Visionary leader and Guild President candidate at Makerere University",
-          "url": "https://bulumba.ug/about",
-          "image": "https://bulumba.ug/timothy-profile.jpg",
+          "url": "https://www.timothybulumba.com/about",
+          "image": "https://www.timothybulumba.com/timothy-profile.jpg",
           "sameAs": [
             "https://twitter.com/TimothyBulumba",
             "https://facebook.com/TimothyBulumba",

@@ -8,15 +8,15 @@ interface ShortLinkConfig {
 
 // Production configuration
 const config: ShortLinkConfig = {
-  domain: 'vote.bulumba.ug', // Professional domain for voting
-  baseUrl: 'https://vote.bulumba.ug',
+  domain: 'timothybulumba.com', // Professional domain for voting
+  baseUrl: 'https://www.timothybulumba.com',
   shortPrefix: 'p' // p for poll
 };
 
 // Fallback for development
 const devConfig: ShortLinkConfig = {
-  domain: 'bulumba-makerere.com',
-  baseUrl: 'https://bulumba-makerere.com',
+  domain: 'timothybulumba.com',
+  baseUrl: 'https://www.timothybulumba.com',
   shortPrefix: 'poll'
 };
 
@@ -69,10 +69,10 @@ export const generatePollLinks = (pollId: string) => {
  */
 export const generateCampaignLinks = () => {
   return {
-    main: 'https://bulumba.ug',
-    vote: 'https://vote.bulumba.ug',
-    campaign: 'https://campaign.bulumba.ug',
-    join: 'https://join.bulumba.ug'
+    main: 'https://www.timothybulumba.com',
+    vote: 'https://www.timothybulumba.com/vote',
+    campaign: 'https://www.timothybulumba.com/campaigns',
+    join: 'https://www.timothybulumba.com/join'
   };
 };
 

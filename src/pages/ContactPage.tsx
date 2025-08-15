@@ -109,7 +109,7 @@ const ContactPage = () => {
         <SocialMeta 
           title="Contact Timothy Bulumba - Build Back Better"
           description="Get in touch with Timothy Bulumba and the Build Back Better campaign team. We're here to listen and help transform Makerere University."
-          url="https://bulumba.ug/contact"
+          url="https://www.timothybulumba.com/contact"
         />
         <Header />
 

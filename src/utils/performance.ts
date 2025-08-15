@@ -125,8 +125,8 @@ export const addResourceHints = () => {
   const hints = [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    { rel: 'dns-prefetch', href: 'https://bulumba.ug' },
-    { rel: 'dns-prefetch', href: 'https://api.bulumba.ug' },
+    { rel: 'dns-prefetch', href: 'https://www.timothybulumba.com' },
+    { rel: 'dns-prefetch', href: 'https://api.timothybulumba.com' },
   ];
   
   hints.forEach(hint => {

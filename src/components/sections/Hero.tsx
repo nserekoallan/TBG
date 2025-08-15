@@ -101,7 +101,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 pb-20"
       aria-label="Hero Section"
     >
       {/* Background pattern */}

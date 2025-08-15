@@ -31,7 +31,7 @@ export const ShareButton = ({
   const [copied, setCopied] = useState(false);
   
   // Generate professional URL with proper sanitization
-  const baseUrl = 'https://bulumba.ug';
+  const baseUrl = 'https://www.timothybulumba.com';
   const currentPath = typeof window !== 'undefined' 
     ? encodeURIComponent(window.location.pathname.replace(/[^a-zA-Z0-9-_/]/g, ''))
     : '';

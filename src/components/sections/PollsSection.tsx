@@ -13,7 +13,7 @@ const PollsSection = () => {
 
   return (
     <section className="section bg-gray-50" id="polls">
-      <div className="container">
+      <div className="container pt-8">
         {/* Header */}
         <motion.div
           className="text-center mb-12"
@@ -62,7 +62,7 @@ const PollsSection = () => {
               <div className="text-white/80 text-sm">Active Polls</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">{analytics.engagementRate}%</div>
+              <div className="text-3xl font-bold">{analytics.engagementRate.toFixed(2)}%</div>
               <div className="text-white/80 text-sm">Engagement Rate</div>
             </div>
             <div className="flex items-center justify-center gap-2">

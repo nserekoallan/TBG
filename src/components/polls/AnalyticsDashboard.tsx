@@ -66,7 +66,7 @@ export const AnalyticsDashboard = () => {
             change > 0 ? "text-green-600" : "text-red-600"
           )}>
             <TrendingUp className="w-4 h-4" />
-            {change > 0 ? '+' : ''}{change}%
+            {change > 0 ? '+' : ''}{change.toFixed(2)}%
           </span>
         )}
       </div>
@@ -99,7 +99,7 @@ export const AnalyticsDashboard = () => {
         <StatCard
           icon={Activity}
           label="Engagement Rate"
-          value={`${analytics.engagementRate}%`}
+          value={`${analytics.engagementRate.toFixed(2)}%`}
           change={5}
           color="bg-gradient-to-r from-blue-500 to-blue-600"
         />
@@ -112,7 +112,7 @@ export const AnalyticsDashboard = () => {
         <StatCard
           icon={Award}
           label="Avg. Participation"
-          value={`${analytics.averageParticipation}%`}
+          value={`${analytics.averageParticipation.toFixed(2)}%`}
           change={8}
           color="bg-gradient-to-r from-orange-500 to-orange-600"
         />
@@ -166,7 +166,7 @@ export const AnalyticsDashboard = () => {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, value }) => `${name}: ${value}%`}
+                label={({ name, value }) => `${name}: ${typeof value === 'number' ? value.toFixed(2) : value}%`}
                 outerRadius={80}
                 fill="#8884d8"
                 dataKey="value"

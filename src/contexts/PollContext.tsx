@@ -68,7 +68,7 @@ const simulateRealtimeUpdate = (poll: Poll): Poll => {
   updatedPoll.totalVotes = updatedPoll.options.reduce((sum, opt) => sum + opt.votes, 0);
   updatedPoll.options = updatedPoll.options.map(option => ({
     ...option,
-    percentage: Math.round((option.votes / updatedPoll.totalVotes) * 100)
+    percentage: Math.round((option.votes / updatedPoll.totalVotes) * 10000) / 100
   }));
   
   return updatedPoll;
@@ -125,21 +125,21 @@ export const PollProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const [analytics, setAnalytics] = useState<PollAnalytics>({
     totalParticipants: 15847,
-    averageParticipation: 78,
+    averageParticipation: 78.34,
     topIssues: [
-      { issue: 'Mental Health Support', percentage: 42 },
-      { issue: 'Accommodation Costs', percentage: 38 },
-      { issue: 'Internet Connectivity', percentage: 35 },
-      { issue: 'Career Services', percentage: 30 }
+      { issue: 'Mental Health Support', percentage: 42.15 },
+      { issue: 'Accommodation Costs', percentage: 38.42 },
+      { issue: 'Internet Connectivity', percentage: 35.78 },
+      { issue: 'Career Services', percentage: 30.93 }
     ],
-    engagementRate: 82,
+    engagementRate: 82.67,
     trendingTopics: ['#BetterWiFi', '#MentalHealthMatters', '#AffordableHostels', '#24-7Library'],
     demographics: {
-      year1: 28,
-      year2: 26,
-      year3: 24,
-      year4: 18,
-      postgrad: 4
+      year1: 28.45,
+      year2: 26.23,
+      year3: 24.18,
+      year4: 18.72,
+      postgrad: 4.42
     }
   });
 
@@ -164,7 +164,7 @@ export const PollProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setAnalytics(prev => ({
           ...prev,
           totalParticipants: prev.totalParticipants + Math.floor(Math.random() * 5),
-          engagementRate: Math.min(95, prev.engagementRate + (Math.random() - 0.3))
+          engagementRate: Math.round(Math.min(95, prev.engagementRate + (Math.random() - 0.3)) * 100) / 100
         }));
       }
     }, Math.random() * 4000 + 3000);
@@ -200,7 +200,7 @@ export const PollProvider: React.FC<{ children: React.ReactNode }> = ({ children
             ...poll,
             options: updatedOptions.map(option => ({
               ...option,
-              percentage: Math.round((option.votes / newTotalVotes) * 100)
+              percentage: Math.round((option.votes / newTotalVotes) * 10000) / 100
             })),
             totalVotes: newTotalVotes
           };

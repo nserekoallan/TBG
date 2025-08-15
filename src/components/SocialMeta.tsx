@@ -13,8 +13,8 @@ interface SocialMetaProps {
 export const SocialMeta = ({
   title = 'Timothy Bulumba - Build Back Better | Makerere Guild President 2025',
   description = 'Join Timothy Bulumba\'s Build Back Better movement. Transforming student life at Makerere University through innovation, technology, and unwavering commitment to excellence.',
-  image = 'https://bulumba.ug/images/campaign-banner.jpg',
-  url = 'https://bulumba.ug',
+  image = 'https://www.timothybulumba.com/images/campaign-banner.jpg',
+  url = 'https://www.timothybulumba.com',
   type = 'website',
   twitterCard = 'summary_large_image',
   twitterHandle = '@TimothyBulumba'
