@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test GitHub Pages Deployment</title>
+</head>
+<body>
+    <h1>Testing GitHub Pages Deployment</h1>
+    <p>If you can see this page, the deployment is working!</p>
+    
+    <h2>Debug Information:</h2>
+    <div id="debug"></div>
+    
+    <h2>Testing Asset Loading:</h2>
+    <img src="https://nserekoallan.github.io/TBG/B1.jpg" alt="Test Image" style="max-width: 200px;">
+    
+    <script>
+        const debugInfo = document.getElementById('debug');
+        
+        // Test if JavaScript is working
+        debugInfo.innerHTML = '<p>JavaScript is working!</p>';
+        
+        // Test fetching the main JS file
+        fetch('https://nserekoallan.github.io/TBG/assets/js/index-CGmmZXio.js')
+            .then(response => {
+                debugInfo.innerHTML += `<p>Main JS file status: ${response.status} ${response.statusText}</p>`;
+                return response.text();
+            })
+            .then(text => {
+                debugInfo.innerHTML += `<p>Main JS file size: ${text.length} bytes</p>`;
+            })
+            .catch(error => {
+                debugInfo.innerHTML += `<p style="color: red;">Error loading JS: ${error}</p>`;
+            });
+            
+        // Test fetching CSS
+        fetch('https://nserekoallan.github.io/TBG/assets/css/index-CQpjqn_S.css')
+            .then(response => {
+                debugInfo.innerHTML += `<p>CSS file status: ${response.status} ${response.statusText}</p>`;
+            })
+            .catch(error => {
+                debugInfo.innerHTML += `<p style="color: red;">Error loading CSS: ${error}</p>`;
+            });
+            
+        // Check console for errors
+        window.addEventListener('error', function(e) {
+            debugInfo.innerHTML += `<p style="color: red;">Error: ${e.message} at ${e.filename}:${e.lineno}:${e.colno}</p>`;
+        });
+    </script>
+</body>
+</html>
