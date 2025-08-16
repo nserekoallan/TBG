@@ -41,7 +41,7 @@ const VisionPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="vision-hero-section pt-20">
+      <section className="vision-hero-section pt-28">
         <div className="vision-hero-container">
           <div className="vision-hero-content">
             <div className="vision-hero-badge">
