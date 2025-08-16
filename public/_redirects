@@ -1,0 +1,5 @@
+# Handle client-side routing for SPA
+/*    /index.html   200
+
+# Short links redirect to polls
+/p/:code    /?poll=:code   302
