@@ -44,7 +44,7 @@ const AboutPage = () => {
               Meet the <span className="text-gradient">Visionary</span>
             </h1>
             
-            <p className="text-xl text-dark-600 leading-relaxed">
+            <p className="text-xl text-gray-800 leading-relaxed">
               Learn about Timothy Bulumba's journey and the mission behind 
               Bulumba Build Back Better at Makerere University.
             </p>
@@ -101,7 +101,7 @@ const AboutPage = () => {
                   <div className="space-y-3">
                     <a 
                       href="mailto:timothybulumba4@gmail.com"
-                      className="flex items-center gap-3 text-dark-600 hover:text-primary-600 transition-colors"
+                      className="flex items-center gap-3 text-gray-800 hover:text-primary-600 transition-colors"
                     >
                       <div className="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
                         <span className="text-primary-600 text-sm">@</span>
@@ -112,7 +112,7 @@ const AboutPage = () => {
                       href="https://wa.me/256703743491"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 text-dark-600 hover:text-green-600 transition-colors"
+                      className="flex items-center gap-3 text-gray-800 hover:text-green-600 transition-colors"
                     >
                       <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
                         <MessageCircle className="w-4 h-4 text-green-600" />
@@ -139,22 +139,22 @@ const AboutPage = () => {
                     Founder & Visionary Leader, Bulumba Build Back Better
                   </p>
                   
-                  <div className="prose prose-lg text-dark-600 space-y-4">
-                    <p>
+                  <div className="prose prose-lg space-y-4">
+                    <p className="text-gray-900 leading-relaxed text-lg">
                       Timothy Bulumba is a passionate advocate for educational transformation and student empowerment 
                       at Makerere University. With a deep commitment to bridging the gap between traditional academic 
                       excellence and modern digital innovation, Timothy has dedicated his efforts to creating meaningful 
                       change within Uganda's premier institution of higher learning.
                     </p>
                     
-                    <p>
+                    <p className="text-gray-900 leading-relaxed text-lg">
                       His vision extends beyond conventional student leadership, focusing on sustainable initiatives 
                       that will benefit generations of Makerere students. Through the Bulumba Build Back Better movement, 
                       Timothy champions innovative solutions including digital payment systems, scholarship programs, 
                       and collaborative learning spaces.
                     </p>
                     
-                    <p>
+                    <p className="text-gray-900 leading-relaxed text-lg">
                       Timothy believes that Makerere University can serve as a model for educational institutions 
                       across Africa, demonstrating how traditional academic values can be enhanced through 
                       technological advancement and community-driven initiatives.
@@ -167,12 +167,12 @@ const AboutPage = () => {
                   <div className="p-6 bg-white rounded-xl shadow-sm border border-primary-100">
                     <GraduationCap className="w-8 h-8 text-primary-600 mb-3" />
                     <h4 className="font-heading font-bold text-dark-800 mb-2">Educational Background</h4>
-                    <p className="text-sm text-dark-600">Student at Makerere University with deep understanding of institutional challenges and opportunities</p>
+                    <p className="text-sm text-gray-800">Student at Makerere University with deep understanding of institutional challenges and opportunities</p>
                   </div>
                   <div className="p-6 bg-white rounded-xl shadow-sm border border-accent-100">
                     <Trophy className="w-8 h-8 text-accent-600 mb-3" />
                     <h4 className="font-heading font-bold text-dark-800 mb-2">Leadership Experience</h4>
-                    <p className="text-sm text-dark-600">Proven track record in student advocacy, community organizing, and institutional reform initiatives</p>
+                    <p className="text-sm text-gray-800">Proven track record in student advocacy, community organizing, and institutional reform initiatives</p>
                   </div>
                 </div>
               </motion.div>
@@ -195,7 +195,7 @@ const AboutPage = () => {
               <h2 className="text-3xl font-heading font-bold text-dark-800 mb-4">
                 Our Mission & Vision
               </h2>
-              <p className="text-lg text-dark-600">
+              <p className="text-lg text-gray-700">
                 The driving principles behind Bulumba Build Back Better
               </p>
             </motion.div>
@@ -214,12 +214,12 @@ const AboutPage = () => {
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-dark-800">Our Mission</h3>
                 </div>
-                <p className="text-dark-600 leading-relaxed">
+                <p className="text-gray-800 leading-relaxed">
                   To transform Makerere University into a modern, digitally-enhanced institution that serves 
                   as a beacon of excellence throughout Africa. We are committed to fostering innovation, 
                   supporting student success, and preserving the rich heritage of this esteemed institution.
                 </p>
-                <ul className="space-y-3 text-dark-600">
+                <ul className="space-y-3 text-gray-800">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Empower students through innovative financial solutions</span>
@@ -248,12 +248,12 @@ const AboutPage = () => {
                   </div>
                   <h3 className="text-2xl font-heading font-bold text-dark-800">Our Vision</h3>
                 </div>
-                <p className="text-dark-600 leading-relaxed">
+                <p className="text-gray-800 leading-relaxed">
                   A Makerere University where every student has access to world-class resources, innovative 
                   learning environments, and the tools needed to succeed in the digital age while maintaining 
                   the institution's prestigious academic standards.
                 </p>
-                <ul className="space-y-3 text-dark-600">
+                <ul className="space-y-3 text-gray-800">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent-500 rounded-full mt-2 flex-shrink-0"></div>
                     <span>Digital transformation of campus operations</span>
@@ -287,7 +287,7 @@ const AboutPage = () => {
               <h2 className="text-3xl font-heading font-bold text-dark-800 mb-4">
                 Key Initiatives
               </h2>
-              <p className="text-lg text-dark-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-800 max-w-3xl mx-auto">
                 The core programs driving positive change at Makerere University
               </p>
             </motion.div>
@@ -328,7 +328,7 @@ const AboutPage = () => {
                     </div>
                     <h3 className="text-xl font-heading font-bold text-dark-800">{initiative.title}</h3>
                   </div>
-                  <p className="text-dark-600 leading-relaxed mb-4">
+                  <p className="text-gray-800 leading-relaxed mb-4">
                     {initiative.description}
                   </p>
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-success-100 text-success-700 rounded-full text-sm font-medium">
@@ -355,7 +355,7 @@ const AboutPage = () => {
               <h2 className="text-3xl font-heading font-bold text-dark-800 mb-6">
                 Join the Movement
               </h2>
-              <p className="text-lg text-dark-600 mb-12">
+              <p className="text-lg text-gray-800 mb-12">
                 Be part of the transformation at Makerere University. Together, we can build back better.
               </p>
               

@@ -3,12 +3,18 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import { PollProvider } from '../contexts/PollContext';
 import { SocialMeta } from '../components/SocialMeta';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LoadingScreen from '../components/LoadingScreen';
 import FloatingButtons from '../components/FloatingButtons';
+
+// Import test functions for development
+if (import.meta.env.DEV) {
+  import('../utils/testShortLinks');
+}
 
 // Lazy load sections for better performance
 const Hero = lazy(() => import('../components/sections/Hero'));
@@ -36,9 +42,26 @@ const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
 };
 
 const IndexRefactored = () => {
+  const [searchParams] = useSearchParams();
   const [endorsements, setEndorsements] = useState(15847);
   const [isLoading, setIsLoading] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
+  const [highlightedPollId, setHighlightedPollId] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Check if we have a poll parameter from short link
+    const pollId = searchParams.get('poll');
+    if (pollId) {
+      setHighlightedPollId(pollId);
+      // Scroll to polls section after a delay to ensure it's rendered
+      setTimeout(() => {
+        const pollsSection = document.getElementById('polls-section');
+        if (pollsSection) {
+          pollsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1500);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Simulate initial data loading
@@ -92,7 +115,7 @@ const IndexRefactored = () => {
               
               <Campaigns />
               
-              <PollsSection />
+              <PollsSection highlightedPollId={highlightedPollId} />
               
               <Impact endorsements={endorsements} />
               

@@ -7,12 +7,16 @@ import { ShareButton } from '../ShareButton';
 import { usePoll } from '../../contexts/PollContext';
 import { cn } from '../../utils/cn';
 
-const PollsSection = () => {
+interface PollsSectionProps {
+  highlightedPollId?: string | null;
+}
+
+const PollsSection = ({ highlightedPollId }: PollsSectionProps) => {
   const { polls, analytics } = usePoll();
   const [activeTab, setActiveTab] = useState<'polls' | 'analytics'>('polls');
 
   return (
-    <section className="section bg-gray-50" id="polls">
+    <section className="section bg-gray-50" id="polls-section">
       <div className="container pt-8">
         {/* Header */}
         <motion.div
@@ -112,8 +116,9 @@ const PollsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
+                className={highlightedPollId === poll.id ? 'ring-4 ring-purple-500 ring-opacity-50 rounded-lg' : ''}
               >
-                <PollCard poll={poll} />
+                <PollCard poll={poll} isHighlighted={highlightedPollId === poll.id} />
               </motion.div>
             ))}
           </div>

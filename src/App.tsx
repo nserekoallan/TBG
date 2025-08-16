@@ -10,12 +10,14 @@ import JoinUsPage from "./pages/JoinUsPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
+import NotFoundPage from "./pages/NotFoundPage";
 import Volunteer from "./pages/Volunteer";
 import Partner from "./pages/Partner";
 import VotePage from "./pages/VotePage";
 import VotePollPage from "./pages/VotePollPage";
 import EventsPage from "./pages/EventsPage";
 import ResourcesPage from "./pages/ResourcesPage";
+import { ShortLinkRedirect } from "./components/ShortLinkRedirect";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +41,13 @@ const App = () => (
           <Route path="/v/:pollId" element={<VotePollPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="*" element={<NotFound />} />
+          
+          {/* Short link routes */}
+          <Route path="/p/:code" element={<ShortLinkRedirect type="short" />} />
+          
+          {/* 404 pages */}
+          <Route path="/404" element={<NotFoundPage />} />
+          <Route path="*" element={<ShortLinkRedirect type="branded" />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

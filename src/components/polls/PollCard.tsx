@@ -9,9 +9,10 @@ import { formatDistanceToNow } from 'date-fns';
 
 interface PollCardProps {
   poll: Poll;
+  isHighlighted?: boolean;
 }
 
-export const PollCard = ({ poll }: PollCardProps) => {
+export const PollCard = ({ poll, isHighlighted = false }: PollCardProps) => {
   const { vote, userVotes, subscribeToUpdates, unsubscribeFromUpdates } = usePoll();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [isVoting, setIsVoting] = useState(false);
@@ -57,9 +58,18 @@ export const PollCard = ({ poll }: PollCardProps) => {
 
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200"
+      className={cn(
+        "bg-white rounded-xl shadow-lg overflow-hidden border",
+        isHighlighted 
+          ? "border-purple-400 shadow-purple-200 shadow-xl" 
+          : "border-gray-200"
+      )}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ 
+        opacity: 1, 
+        y: 0,
+        scale: isHighlighted ? 1.02 : 1
+      }}
       transition={{ duration: 0.5 }}
     >
       {/* Header */}

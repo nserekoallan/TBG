@@ -83,7 +83,7 @@ const Header = () => {
                   className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg hover:bg-primary-50 ${
                     isActive(item.path)
                       ? 'text-primary-600 bg-primary-50'
-                      : 'text-dark-600 hover:text-primary-600'
+                      : 'text-gray-800 hover:text-primary-600'
                   }`}
                 >
                   {item.name}
@@ -152,7 +152,7 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden absolute top-full left-0 right-0 glass backdrop-blur-xl border-b border-white/10 shadow-xl"
+              className="lg:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-xl border-b border-gray-200 shadow-xl"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
@@ -171,7 +171,7 @@ const Header = () => {
                       className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 ${
                         isActive(item.path)
                           ? 'text-primary-600 bg-primary-50 shadow-sm'
-                          : 'text-dark-600 hover:text-primary-600 hover:bg-primary-50'
+                          : 'text-gray-800 hover:text-primary-600 hover:bg-primary-50'
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
