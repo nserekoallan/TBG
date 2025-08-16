@@ -99,7 +99,7 @@ export const PollCard = ({ poll, isHighlighted = false }: PollCardProps) => {
       </div>
 
       {/* Poll Options */}
-      <div className="p-6 space-y-3">
+      <div className="p-4 lg:p-6 space-y-3">
         {poll.options.map((option) => {
           const isSelected = selectedOption === option.id;
           const isUserVote = userVote === option.id;
@@ -116,7 +116,7 @@ export const PollCard = ({ poll, isHighlighted = false }: PollCardProps) => {
               whileTap={!hasVoted ? { scale: 0.98 } : {}}
             >
               <div className={cn(
-                "relative rounded-lg border-2 p-4 transition-all",
+                "relative rounded-lg border-2 p-3 lg:p-4 transition-all",
                 isSelected && !hasVoted && "border-purple-500 bg-purple-50",
                 !isSelected && !hasVoted && "border-gray-200 hover:border-gray-300",
                 isUserVote && "border-green-500 bg-green-50",
@@ -206,7 +206,7 @@ export const PollCard = ({ poll, isHighlighted = false }: PollCardProps) => {
       </div>
 
       {/* Footer */}
-      <div className="px-6 pb-6">
+      <div className="px-4 lg:px-6 pb-4 lg:pb-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4 text-sm text-gray-600">
             <span className="flex items-center gap-1">

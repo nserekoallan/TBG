@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense, lazy } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,22 +6,14 @@ import { CheckCircle } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import { PollProvider } from '../contexts/PollContext';
 import { SocialMeta } from '../components/SocialMeta';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import LoadingScreen from '../components/LoadingScreen';
-import FloatingButtons from '../components/FloatingButtons';
+import { ResponsiveLayout } from '../components/ResponsiveLayout';
 
 // Import test functions for development
 if (import.meta.env.DEV) {
   import('../utils/testShortLinks');
 }
 
-// Lazy load sections for better performance
-const Hero = lazy(() => import('../components/sections/Hero'));
-const Campaigns = lazy(() => import('../components/sections/Campaigns'));
-const Impact = lazy(() => import('../components/sections/Impact'));
-const PollsSection = lazy(() => import('../components/sections/PollsSection'));
-const CallToAction = lazy(() => import('../components/sections/CallToAction'));
 
 // Error Fallback Component
 const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
@@ -46,13 +38,11 @@ const IndexRefactored = () => {
   const [endorsements, setEndorsements] = useState(15847);
   const [isLoading, setIsLoading] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
-  const [highlightedPollId, setHighlightedPollId] = useState<string | null>(null);
 
   useEffect(() => {
     // Check if we have a poll parameter from short link
     const pollId = searchParams.get('poll');
     if (pollId) {
-      setHighlightedPollId(pollId);
       // Scroll to polls section after a delay to ensure it's rendered
       setTimeout(() => {
         const pollsSection = document.getElementById('polls-section');
@@ -103,35 +93,14 @@ const IndexRefactored = () => {
         <PollProvider>
           <div className="min-h-screen bg-white">
             <SocialMeta />
-            <Header />
-          
-          <main>
+            
             <Suspense fallback={<LoadingScreen />}>
-              <Hero 
+              <ResponsiveLayout 
                 endorsements={endorsements}
                 onEndorse={handleEndorse}
                 onWhatsApp={openWhatsApp}
               />
-              
-              <Campaigns />
-              
-              <PollsSection highlightedPollId={highlightedPollId} />
-              
-              <Impact endorsements={endorsements} />
-              
-              <CallToAction 
-                onEndorse={handleEndorse}
-                onWhatsApp={openWhatsApp}
-              />
             </Suspense>
-          </main>
-
-          <FloatingButtons 
-            onEndorse={handleEndorse}
-            onWhatsApp={openWhatsApp}
-          />
-          
-          <Footer />
 
           {/* Success notification */}
           <AnimatePresence>

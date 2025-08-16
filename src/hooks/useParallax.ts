@@ -1,19 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring } from '@react-spring/web';
 
 interface ParallaxConfig {
   speed?: number;
   offset?: number;
-  easing?: string;
-  clamp?: boolean;
 }
 
 export const useParallax = (config: ParallaxConfig = {}) => {
   const { 
     speed = 0.5, 
-    offset = 0, 
-    easing = 'out', 
-    clamp = false 
+    offset = 0
   } = config;
   
   const [scrollY, setScrollY] = useState(0);

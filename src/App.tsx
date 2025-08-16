@@ -9,7 +9,6 @@ import VisionPage from "./pages/VisionPage";
 import JoinUsPage from "./pages/JoinUsPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
-import NotFound from "./pages/NotFound";
 import NotFoundPage from "./pages/NotFoundPage";
 import Volunteer from "./pages/Volunteer";
 import Partner from "./pages/Partner";
@@ -47,7 +46,7 @@ const App = () => (
           
           {/* 404 pages */}
           <Route path="/404" element={<NotFoundPage />} />
-          <Route path="*" element={<ShortLinkRedirect type="branded" />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

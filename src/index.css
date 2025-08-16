@@ -316,6 +316,59 @@
     gap: var(--space-6);
   }
 
+  /* Maximum Z-Index for Modals */
+  .z-modal {
+    z-index: 999999 !important;
+  }
+  
+  .z-modal-backdrop {
+    z-index: 999998 !important;
+  }
+
+  /* Mobile-First Optimizations */
+  .mobile-layout {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-layout * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Mobile touch improvements */
+  @media (max-width: 1023px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    button, input, select, textarea {
+      font-size: 16px; /* Prevent zoom on iOS */
+      touch-action: manipulation;
+    }
+    
+    /* Optimize mobile scrolling */
+    .mobile-polls {
+      padding: 1rem;
+    }
+    
+    .mobile-impact {
+      margin-top: 2rem;
+    }
+    
+    .mobile-cta {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* Desktop optimizations */
+  @media (min-width: 1024px) {
+    .desktop-layout {
+      scroll-behavior: smooth;
+    }
+  }
+
   /* Animations */
   @keyframes fade-in {
     from {

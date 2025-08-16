@@ -34,7 +34,7 @@ const FloatingButtons = memo(({ onEndorse, onWhatsApp }: FloatingButtonsProps) =
           <>
             <motion.button
               className={cn(
-                "fixed bottom-8 right-8 w-16 h-16 z-40",
+                "fixed bottom-4 right-4 sm:bottom-8 sm:right-8 w-14 h-14 sm:w-16 sm:h-16 z-40",
                 "btn-primary rounded-full",
                 "flex items-center justify-center"
               )}
@@ -46,12 +46,12 @@ const FloatingButtons = memo(({ onEndorse, onWhatsApp }: FloatingButtonsProps) =
               whileTap={{ scale: 0.9 }}
               aria-label="Endorse Timothy"
             >
-              <Heart className="w-8 h-8 text-white" />
+              <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </motion.button>
             
             <motion.button
               className={cn(
-                "fixed bottom-8 right-28 w-16 h-16 z-40",
+                "fixed bottom-4 right-20 sm:bottom-8 sm:right-28 w-14 h-14 sm:w-16 sm:h-16 z-40",
                 "bg-gradient-to-r from-green-500 to-emerald-600",
                 "rounded-full shadow-2xl",
                 "flex items-center justify-center"
@@ -64,7 +64,7 @@ const FloatingButtons = memo(({ onEndorse, onWhatsApp }: FloatingButtonsProps) =
               whileTap={{ scale: 0.9 }}
               aria-label="Chat on WhatsApp"
             >
-              <MessageCircle className="w-8 h-8 text-white" />
+              <MessageCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </motion.button>
           </>
         )}

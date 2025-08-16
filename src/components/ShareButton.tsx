@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Share2, Copy, Check, MessageCircle, Twitter, 
@@ -28,6 +28,34 @@ export const ShareButton = ({
   buttonText = 'Share'
 }: ShareButtonProps) => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Close dropdown when clicking outside or on escape
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setShowDropdown(false);
+    };
+    
+    if (showDropdown) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = isMobile ? 'hidden' : 'auto'; // Prevent scroll on mobile
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'auto';
+    };
+  }, [showDropdown, isMobile]);
+  
+  // Detect mobile/tablet screen size
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const [copied, setCopied] = useState(false);
   
   // Generate professional URL with proper sanitization
@@ -76,24 +104,26 @@ export const ShareButton = ({
       case 'whatsapp':
         window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
         break;
-      case 'twitter':
+      case 'twitter': {
         const hashtags = config.hashtags ? config.hashtags.join(',') : '';
         window.open(
           `https://twitter.com/intent/tweet?text=${encodedMessage}&hashtags=${hashtags}${config.via ? `&via=${config.via}` : ''}`, 
           '_blank'
         );
         break;
+      }
       case 'facebook':
         window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, '_blank');
         break;
       case 'telegram':
         window.open(`https://t.me/share/url?url=${encodedUrl}&text=${encodedMessage}`, '_blank');
         break;
-      case 'email':
+      case 'email': {
         const subject = encodedTitle;
         const body = encodeURIComponent(`${config.description}\n\nRead more: ${shareUrl}`);
         window.location.href = `mailto:?subject=${subject}&body=${body}`;
         break;
+      }
     }
     
     setShowDropdown(false);
@@ -114,6 +144,7 @@ export const ShareButton = ({
       setShowDropdown(true);
     }
   };
+
 
   const renderButton = () => {
     switch(variant) {
@@ -163,7 +194,7 @@ export const ShareButton = ({
   };
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block z-50">
       {renderButton()}
       
       <AnimatePresence>
@@ -171,22 +202,34 @@ export const ShareButton = ({
           <>
             {/* Backdrop */}
             <div 
-              className="fixed inset-0 z-40"
+              className="fixed inset-0 z-[999] bg-black/50 lg:bg-transparent"
               onClick={() => setShowDropdown(false)}
             />
             
-            {/* Dropdown */}
+            {/* Dropdown/Modal */}
             <motion.div
-              className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50"
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
+              className={cn(
+                "z-[1000] bg-white shadow-2xl border border-gray-200 overflow-hidden",
+                isMobile 
+                  ? "fixed bottom-0 left-0 right-0 rounded-t-2xl" 
+                  : "absolute left-0 lg:right-0 lg:left-auto mt-2 w-72 lg:w-64 rounded-xl"
+              )}
+              initial={isMobile ? { y: "100%" } : { opacity: 0, y: -10, scale: 0.95 }}
+              animate={isMobile ? { y: 0 } : { opacity: 1, y: 0, scale: 1 }}
+              exit={isMobile ? { y: "100%" } : { opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+              {/* Mobile Handle */}
+              {isMobile && (
+                <div className="flex justify-center pt-2 pb-1">
+                  <div className="w-8 h-1 bg-gray-300 rounded-full" />
+                </div>
+              )}
+              
               {/* Header */}
-              <div className="px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+              <div className="px-3 py-2 lg:px-4 lg:py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold">Share this page</span>
+                  <span className="font-semibold text-sm lg:text-base">Share this page</span>
                   <button
                     onClick={() => setShowDropdown(false)}
                     className="p-1 hover:bg-white/20 rounded transition-colors"
@@ -197,12 +240,12 @@ export const ShareButton = ({
               </div>
               
               {/* Share Options */}
-              <div className="p-2">
+              <div className={cn("p-2", isMobile && "pb-6")}>
                 {/* Copy Link */}
                 <button
                   onClick={copyToClipboard}
                   className={cn(
-                    "w-full px-3 py-2 rounded-lg flex items-center gap-3 transition-colors",
+                    "w-full px-3 py-3 rounded-lg flex items-center gap-3 transition-colors",
                     copied 
                       ? "bg-green-50 text-green-700" 
                       : "hover:bg-gray-50 text-gray-700"
@@ -226,7 +269,7 @@ export const ShareButton = ({
                 {/* Social Platforms */}
                 <button
                   onClick={() => share('whatsapp')}
-                  className="w-full px-3 py-2 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
+                  className="w-full px-3 py-3 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
                 >
                   <MessageCircle className="w-5 h-5 text-green-500" />
                   <span>WhatsApp</span>
@@ -234,7 +277,7 @@ export const ShareButton = ({
                 
                 <button
                   onClick={() => share('twitter')}
-                  className="w-full px-3 py-2 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
+                  className="w-full px-3 py-3 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
                 >
                   <Twitter className="w-5 h-5 text-sky-500" />
                   <span>Twitter</span>
@@ -242,7 +285,7 @@ export const ShareButton = ({
                 
                 <button
                   onClick={() => share('facebook')}
-                  className="w-full px-3 py-2 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
+                  className="w-full px-3 py-3 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
                 >
                   <Facebook className="w-5 h-5 text-blue-600" />
                   <span>Facebook</span>
@@ -250,7 +293,7 @@ export const ShareButton = ({
                 
                 <button
                   onClick={() => share('telegram')}
-                  className="w-full px-3 py-2 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
+                  className="w-full px-3 py-3 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
                 >
                   <Send className="w-5 h-5 text-blue-500" />
                   <span>Telegram</span>
@@ -258,7 +301,7 @@ export const ShareButton = ({
                 
                 <button
                   onClick={() => share('email')}
-                  className="w-full px-3 py-2 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
+                  className="w-full px-3 py-3 rounded-lg hover:bg-gray-50 flex items-center gap-3 text-gray-700 transition-colors"
                 >
                   <Mail className="w-5 h-5 text-gray-600" />
                   <span>Email</span>

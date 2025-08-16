@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Input } from '../components/ui/input';
-import { Calendar, Clock, MapPin, Users, Search, Filter, Plus } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Search, Plus } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -106,7 +106,6 @@ const EventsPage = () => {
   });
 
   const featuredEvents = events.filter(event => event.featured);
-  const upcomingEvents = events.filter(event => !event.featured);
 
   return (
     <div className="min-h-screen bg-gray-50">

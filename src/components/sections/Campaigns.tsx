@@ -4,7 +4,6 @@ import {
   Zap, Trophy, Globe, Shield, Lightbulb, Heart, 
   Flame, type LucideIcon 
 } from 'lucide-react';
-import { ShareButton } from '../ShareButton';
 import { cn } from '../../utils/cn';
 
 interface Campaign {
@@ -116,21 +115,12 @@ const Campaigns = memo(() => {
                   {campaign.description}
                 </p>
                 
-                {/* Footer with stats and share */}
-                <div className="flex items-center justify-between">
+                {/* Footer with stats */}
+                <div className="flex items-center">
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-purple-100 text-purple-700 rounded-full">
                     <Flame className="w-4 h-4 text-orange-500" aria-hidden="true" />
                     <span className="font-semibold text-sm">{campaign.stats}</span>
                   </div>
-                  <ShareButton
-                    config={{
-                      title: `${campaign.title} - Bulumba Campaign`,
-                      description: campaign.description,
-                      hashtags: ['BulumbaBuildBack', campaign.title.replace(/\s+/g, '')],
-                    }}
-                    variant="icon"
-                    className="text-gray-500 hover:text-purple-600"
-                  />
                 </div>
               </div>
             </motion.article>

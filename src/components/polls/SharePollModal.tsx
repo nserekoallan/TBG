@@ -141,20 +141,20 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
           >
             <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Header */}
-              <div className="p-6 border-b border-gray-200">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-                      <Share2 className="w-6 h-6 text-purple-600" />
+              <div className="p-4 lg:p-6 border-b border-gray-200">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1 pr-4">
+                    <h2 className="text-xl lg:text-2xl font-bold text-gray-900 flex items-center gap-2">
+                      <Share2 className="w-5 h-5 lg:w-6 lg:h-6 text-purple-600" />
                       Share Poll
                     </h2>
-                    <p className="text-sm text-gray-600 mt-1">
+                    <p className="text-xs lg:text-sm text-gray-600 mt-1">
                       Share this poll with students to get more responses
                     </p>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
                   >
                     <X className="w-5 h-5 text-gray-500" />
                   </button>
@@ -162,7 +162,7 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
               </div>
               
               {/* Poll Preview */}
-              <div className="p-6 bg-gradient-to-r from-purple-50 to-blue-50">
+              <div className="p-4 lg:p-6 bg-gradient-to-r from-purple-50 to-blue-50">
                 <div className="text-sm text-purple-600 font-semibold mb-2">
                   {poll.category.toUpperCase()} POLL
                 </div>
@@ -179,23 +179,23 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
               </div>
               
               {/* Share Options */}
-              <div className="p-6 space-y-6">
+              <div className="p-4 lg:p-6 space-y-4 lg:space-y-6">
                 {/* Link Type Selector */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Choose Link Format
                   </label>
-                  <div className="flex gap-2 mb-3">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     <button
                       onClick={() => setSelectedLinkType('short')}
                       className={cn(
-                        "px-4 py-2 rounded-lg text-sm font-medium transition-all",
+                        "px-3 py-2 lg:px-4 lg:py-2 rounded-lg text-xs lg:text-sm font-medium transition-all",
                         selectedLinkType === 'short'
                           ? "bg-purple-600 text-white"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       )}
                     >
-                      <Link2 className="w-4 h-4 inline mr-1" />
+                      <Link2 className="w-3 h-3 lg:w-4 lg:h-4 inline mr-1" />
                       Short Link
                     </button>
                     <button
@@ -207,7 +207,7 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       )}
                     >
-                      <Globe className="w-4 h-4 inline mr-1" />
+                      <Globe className="w-3 h-3 lg:w-4 lg:h-4 inline mr-1" />
                       Branded Link
                     </button>
                     <button
@@ -219,19 +219,19 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                       )}
                     >
-                      <ExternalLink className="w-4 h-4 inline mr-1" />
+                      <ExternalLink className="w-3 h-3 lg:w-4 lg:h-4 inline mr-1" />
                       Full Link
                     </button>
                   </div>
                   
                   {/* Link Display and Copy */}
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <div className="flex-1 relative">
                       <input
                         type="text"
                         value={primaryLink}
                         readOnly
-                        className="w-full px-4 py-3 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg text-sm font-medium text-purple-900"
+                        className="w-full px-3 py-2 lg:px-4 lg:py-3 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg text-xs lg:text-sm font-medium text-purple-900"
                       />
                       <div className="absolute top-0 right-2 h-full flex items-center">
                         <span className="text-xs text-purple-600 font-semibold bg-white px-2 py-1 rounded">
@@ -242,7 +242,7 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                     <button
                       onClick={() => copyToClipboard(primaryLink, 'link')}
                       className={cn(
-                        "px-6 py-3 rounded-lg font-medium transition-all flex items-center gap-2",
+                        "px-4 py-2 lg:px-6 lg:py-3 rounded-lg font-medium transition-all flex items-center justify-center gap-2 min-w-0 sm:min-w-[120px]",
                         copiedLink
                           ? "bg-green-500 text-white"
                           : "bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:shadow-lg"
@@ -250,13 +250,13 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                     >
                       {copiedLink ? (
                         <>
-                          <Check className="w-5 h-5" />
-                          Copied!
+                          <Check className="w-4 h-4 lg:w-5 lg:h-5" />
+                          <span className="hidden sm:inline">Copied!</span>
                         </>
                       ) : (
                         <>
-                          <Copy className="w-5 h-5" />
-                          Copy
+                          <Copy className="w-4 h-4 lg:w-5 lg:h-5" />
+                          <span className="hidden sm:inline">Copy</span>
                         </>
                       )}
                     </button>
@@ -284,36 +284,36 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Share via Social Media
                   </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-3">
                     <button
                       onClick={shareViaWhatsApp}
-                      className="flex items-center justify-center gap-2 px-4 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                      className="flex items-center justify-center gap-1 lg:gap-2 px-2 py-2 lg:px-4 lg:py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors text-sm lg:text-base"
                     >
-                      <MessageCircle className="w-5 h-5" />
+                      <MessageCircle className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className="font-medium">WhatsApp</span>
                     </button>
                     
                     <button
                       onClick={shareViaTwitter}
-                      className="flex items-center justify-center gap-2 px-4 py-3 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
+                      className="flex items-center justify-center gap-1 lg:gap-2 px-2 py-2 lg:px-4 lg:py-3 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-sm lg:text-base"
                     >
-                      <Twitter className="w-5 h-5" />
+                      <Twitter className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className="font-medium">Twitter</span>
                     </button>
                     
                     <button
                       onClick={shareViaFacebook}
-                      className="flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      className="flex items-center justify-center gap-1 lg:gap-2 px-2 py-2 lg:px-4 lg:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm lg:text-base"
                     >
-                      <Facebook className="w-5 h-5" />
+                      <Facebook className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className="font-medium">Facebook</span>
                     </button>
                     
                     <button
                       onClick={shareViaEmail}
-                      className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                      className="flex items-center justify-center gap-1 lg:gap-2 px-2 py-2 lg:px-4 lg:py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base"
                     >
-                      <Mail className="w-5 h-5" />
+                      <Mail className="w-4 h-4 lg:w-5 lg:h-5" />
                       <span className="font-medium">Email</span>
                     </button>
                   </div>
@@ -324,14 +324,14 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     QR Code for Printed Materials
                   </label>
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-col sm:flex-row items-center gap-4">
                     <img
                       src={qrCodeUrl}
                       alt="Poll QR Code"
-                      className="w-32 h-32 border-2 border-gray-300 rounded-lg"
+                      className="w-24 h-24 lg:w-32 lg:h-32 border-2 border-gray-300 rounded-lg mx-auto sm:mx-0"
                     />
-                    <div className="flex-1">
-                      <p className="text-sm text-gray-600 mb-2">
+                    <div className="flex-1 text-center sm:text-left">
+                      <p className="text-xs lg:text-sm text-gray-600 mb-2">
                         Students can scan this QR code to vote directly on their phones
                       </p>
                       <a
@@ -351,17 +351,17 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Embed on Website
                   </label>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <textarea
                       value={embedCode}
                       readOnly
                       rows={3}
-                      className="flex-1 px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg text-xs font-mono"
+                      className="flex-1 px-3 py-2 lg:px-4 lg:py-2 bg-gray-50 border border-gray-300 rounded-lg text-xs font-mono"
                     />
                     <button
                       onClick={() => copyToClipboard(embedCode, 'embed')}
                       className={cn(
-                        "px-4 py-2 rounded-lg font-medium transition-all",
+                        "px-3 py-2 lg:px-4 lg:py-2 rounded-lg font-medium transition-all flex items-center justify-center",
                         copiedEmbed
                           ? "bg-green-500 text-white"
                           : "bg-gray-600 text-white hover:bg-gray-700"
@@ -369,11 +369,11 @@ export const SharePollModal = ({ poll, isOpen, onClose }: SharePollModalProps) =
                     >
                       {copiedEmbed ? (
                         <>
-                          <Check className="w-5 h-5" />
+                          <Check className="w-4 h-4 lg:w-5 lg:h-5" />
                         </>
                       ) : (
                         <>
-                          <Copy className="w-5 h-5" />
+                          <Copy className="w-4 h-4 lg:w-5 lg:h-5" />
                         </>
                       )}
                     </button>

@@ -93,7 +93,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
     }, 6000); // Increased for smoother experience
     
     return () => clearInterval(interval);
-  }, [imagesLoaded, heroImages.length]);
+  }, [imagesLoaded]);
 
   const handleEndorse = () => {
     onEndorse();
@@ -137,12 +137,12 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
         ))}
       </div>
 
-      <div className="container relative pt-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+      <div className="container relative pt-20 px-4 sm:pt-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           
           {/* Left Content */}
           <motion.div
-            className="text-center lg:text-left space-y-8"
+            className="text-center lg:text-left space-y-6 lg:space-y-8"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -179,7 +179,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
                 BUILD • BACK • BETTER
               </div>
               
-              <p className="text-responsive-lg text-gray-600 max-w-xl leading-relaxed">
+              <p className="text-responsive-base sm:text-responsive-lg text-gray-600 max-w-xl leading-relaxed mx-auto lg:mx-0 px-4 sm:px-0">
                 Revolutionizing student life at Makerere University through innovation, 
                 technology, and unwavering commitment to excellence.
               </p>
@@ -187,7 +187,7 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
 
             {/* Stats */}
             <motion.div 
-              className="grid grid-cols-3 gap-8 max-w-md"
+              className="grid grid-cols-3 gap-4 sm:gap-8 max-w-md mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -208,27 +208,27 @@ const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-3 sm:gap-4 max-w-md mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
               <button
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
-                onClick={() => document.getElementById('campaigns')?.scrollIntoView({ behavior: 'smooth' })}
+                className="w-full px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all"
+                onClick={() => document.getElementById('polls-section')?.scrollIntoView({ behavior: 'smooth' })}
                 aria-label="Explore Vision"
               >
-                <Rocket className="w-5 h-5 mr-2 inline" />
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 mr-2 inline" />
                 Explore Vision
-                <ArrowRight className="w-5 h-5 ml-2 inline" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 inline" />
               </button>
               
               <button
-                className="px-8 py-4 bg-white text-purple-600 border-2 border-purple-600 rounded-xl font-bold text-lg hover:bg-purple-50 transition-all"
+                className="w-full px-6 py-3 sm:px-8 sm:py-4 bg-white text-purple-600 border-2 border-purple-600 rounded-xl font-bold text-base sm:text-lg hover:bg-purple-50 transition-all"
                 onClick={onWhatsApp}
                 aria-label="Connect on WhatsApp"
               >
-                <MessageCircle className="w-5 h-5 mr-2 inline" />
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2 inline" />
                 Connect Now
               </button>
               

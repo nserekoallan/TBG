@@ -108,7 +108,7 @@ const PollsSection = ({ highlightedPollId }: PollsSectionProps) => {
 
         {/* Content */}
         {activeTab === 'polls' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
             {polls.filter(poll => poll.isActive).map((poll, index) => (
               <motion.div
                 key={poll.id}

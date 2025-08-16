@@ -29,9 +29,8 @@ const getTimothyImages = (): string[] => {
 export const TIMOTHY_IMAGE_ARRAY = getTimothyImages();
 
 // Direct import fallback for development
-let directImports: string[] = [];
+const directImports: string[] = [];
 try {
-  // @ts-ignore - dynamic import for fallback
   import('../assets/images/timothy-1.jpg').then(m => directImports[0] = m.default);
   import('../assets/images/timothy-2.jpg').then(m => directImports[1] = m.default);  
   import('../assets/images/timothy-3.jpg').then(m => directImports[2] = m.default);
