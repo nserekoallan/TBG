@@ -4,6 +4,16 @@ import { ArrowRight, MessageCircle, Rocket, Sparkles, ThumbsUp } from 'lucide-re
 import { ShareButton } from '../ShareButton';
 import { cn } from '../../utils/cn';
 
+// Import images directly for better reliability
+import timothy1 from '../../assets/images/timothy-1.jpg';
+import timothy2 from '../../assets/images/timothy-2.jpg';
+import timothy3 from '../../assets/images/timothy-3.jpg';
+import timothy4 from '../../assets/images/timothy-4.jpg';
+import timothy5 from '../../assets/images/timothy-5.jpg';
+import timothy6 from '../../assets/images/timothy-6.jpg';
+import timothy7 from '../../assets/images/timothy-7.jpg';
+import timothy8 from '../../assets/images/timothy-8.jpg';
+
 interface HeroImage {
   src: string;
   alt: string;
@@ -16,17 +26,16 @@ interface HeroProps {
   onWhatsApp: () => void;
 }
 
-// Use dynamic base URL for GitHub Pages deployment
-const baseUrl = import.meta.env.BASE_URL || '/';
+// Use imported images for better reliability
 const heroImages: HeroImage[] = [
-  { src: `${baseUrl}timothy-1.jpg`, alt: 'Timothy Bulumba - Leader', caption: 'Transforming Makerere' },
-  { src: `${baseUrl}timothy-2.jpg`, alt: 'Timothy Bulumba - Visionary', caption: 'Innovation First' },
-  { src: `${baseUrl}timothy-3.jpg`, alt: 'Timothy Bulumba - Champion', caption: 'Students First' },
-  { src: `${baseUrl}timothy-4.jpg`, alt: 'Timothy Bulumba - Builder', caption: 'Building Excellence' },
-  { src: `${baseUrl}timothy-5.jpg`, alt: 'Timothy Bulumba - Innovator', caption: 'Digital Revolution' },
-  { src: `${baseUrl}timothy-6.jpg`, alt: 'Timothy Bulumba - Unite', caption: 'Unity in Diversity' },
-  { src: `${baseUrl}timothy-7.jpg`, alt: 'Timothy Bulumba - Future', caption: 'Future Forward' },
-  { src: `${baseUrl}timothy-8.jpg`, alt: 'Timothy Bulumba - Success', caption: 'Your Success, Our Mission' }
+  { src: timothy1, alt: 'Timothy Bulumba - Leader', caption: 'Transforming Makerere' },
+  { src: timothy2, alt: 'Timothy Bulumba - Visionary', caption: 'Innovation First' },
+  { src: timothy3, alt: 'Timothy Bulumba - Champion', caption: 'Students First' },
+  { src: timothy4, alt: 'Timothy Bulumba - Builder', caption: 'Building Excellence' },
+  { src: timothy5, alt: 'Timothy Bulumba - Innovator', caption: 'Digital Revolution' },
+  { src: timothy6, alt: 'Timothy Bulumba - Unite', caption: 'Unity in Diversity' },
+  { src: timothy7, alt: 'Timothy Bulumba - Future', caption: 'Future Forward' },
+  { src: timothy8, alt: 'Timothy Bulumba - Success', caption: 'Your Success, Our Mission' }
 ];
 
 const Hero = memo(({ endorsements, onEndorse, onWhatsApp }: HeroProps) => {
