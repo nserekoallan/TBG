@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 import { 
   BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, 
-  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar
 } from 'recharts';
 import { 
   Users, TrendingUp, Award, Target, Activity, 
-  Hash, Calendar, BarChart3, PieChart as PieChartIcon 
+  Hash, BarChart3, PieChart as PieChartIcon 
 } from 'lucide-react';
 import { usePoll } from '../../contexts/PollContext';
 import { cn } from '../../utils/cn';
