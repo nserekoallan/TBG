@@ -1,6 +1,8 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { HelmetProvider } from 'react-helmet-async';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle } from 'lucide-react';
 import { PollProvider } from '../contexts/PollContext';
 import { SocialMeta } from '../components/SocialMeta';
 import Header from '../components/Header';
@@ -36,6 +38,7 @@ const ErrorFallback = ({ error, resetErrorBoundary }: any) => {
 const IndexRefactored = () => {
   const [endorsements, setEndorsements] = useState(15847);
   const [isLoading, setIsLoading] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
     // Simulate initial data loading
@@ -58,6 +61,8 @@ const IndexRefactored = () => {
 
   const handleEndorse = () => {
     setEndorsements(prev => prev + 1);
+    setShowNotification(true);
+    setTimeout(() => setShowNotification(false), 3000);
   };
 
   const openWhatsApp = () => {
@@ -104,6 +109,24 @@ const IndexRefactored = () => {
           />
           
           <Footer />
+
+          {/* Success notification */}
+          <AnimatePresence>
+            {showNotification && (
+              <motion.div
+                className="fixed top-20 right-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-2xl shadow-2xl z-[100]"
+                initial={{ x: 400, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 400, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6" />
+                  <span className="font-bold">Thank you for your support! 🎉</span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </PollProvider>
       </HelmetProvider>
